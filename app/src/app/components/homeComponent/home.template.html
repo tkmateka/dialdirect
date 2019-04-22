@@ -1,0 +1,420 @@
+<div fxLayout="column wrap" class="mainContainer" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+  <div fxLayout="row wrap" class="toolBar" fxLayoutAlign="space-between center" fxShow="true" fxHide="false">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxShow="true" fxHide="false">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false"><img imgSrc="Web/brand-dd.svg" class="logoImg"></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+          <p class="boldLogoTxt">DIALDIRECT INSURANCE</p>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <div fxLayout="column wrap" class="sidePadding10px" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" *ngFor="let icon of toolbarIcons">
+          <mat-icon>{{icon}}</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="navbarItemsContainer" fxLayoutAlign="space-around center" fxShow="true" fxHide="false">
+    <div id="myNAV" fxLayout="row" fxLayoutAlign="center center">
+      <button mat-button="" class="navBtn active">IDENTIFICATION</button>
+      <button mat-button="" class="navBtn">RISK ITEM</button>
+      <button mat-button="" class="navBtn" style="width:auto !important">EXTENDED COVER OPTIONS</button>
+      <button mat-button="" class="navBtn">QUOTE SUMMARY</button>
+      <button mat-button="" class="navBtn">UNDERWRITING</button>
+      <button mat-button="" class="navBtn">BANKING</button>
+      <button mat-button="" class="navBtn">FINALISE</button>
+      <button mat-button="" class="navBtn">AFTER SALE</button>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="displayer" fxLayoutAlign="space-between stretch" fxShow="true" fxHide="false">
+    <div fxLayout="column wrap" class="height100 extPanel" fxFlex="28" fxLayoutAlign="center center" fxShow="true" fxHide="false">
+      <mat-accordion class="panel1">
+        <!-- Panel 1 -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="panelTitle">
+              <div class="panelTitleDiv">
+                <div class="iconContainer">
+                  <mat-icon>group</mat-icon>
+                </div>
+                <div class="textContainer">
+                  CALL DETAILS
+                </div>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="panelTitleDiv">
+            <input matInput="" placeholder="Customer&apos;s Name:">
+          </mat-form-field>
+
+          <mat-form-field class="panelTitleDiv">
+            <input matInput="" placeholder="Customer&apos;s Quote ID:">
+          </mat-form-field>
+
+          <mat-form-field class="panelTitleDiv">
+            <input matInput="" placeholder="Customer&apos;s Current Insurance Company:">
+          </mat-form-field>
+
+          <mat-form-field class="panelTitleDiv">
+            <span matPrefix="">R &#xA0;</span>
+            <input matInput="" placeholder="Customer&apos;s Current Premium:">
+          </mat-form-field>
+
+          <button mat-raised-button="" class="panelTitleDiv navyBG btn">Competitor information</button>
+          <button mat-raised-button="" class="panelTitleDiv navyBG marginTop1em btn" style="margin-bottom:1em">Objection</button>
+
+          <label>Estimated Monthly Premium:</label>
+          <p class="estimate">R 0</p>
+
+
+        </mat-expansion-panel>
+
+        <!-- Panel 2 -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="panelTitle">
+              <div class="panelTitleDiv">
+                <div class="iconContainer">
+                  <mat-icon>time_to_leave</mat-icon>
+                </div>
+                <div class="textContainer">
+                  VEHICLE
+                </div>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I&apos;m visible because I am open</p>
+        </mat-expansion-panel>
+
+        <!-- Panel 3 -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="panelTitle">
+              <div class="panelTitleDiv">
+                <div class="iconContainer">
+                  <mat-icon>home</mat-icon>
+                </div>
+                <div class="textContainer">
+                  HOME &amp; BUILDING
+                </div>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I&apos;m visible because I am open</p>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </div>
+    <div fxLayout="column wrap" class="height100" fxFlex="70" fxLayoutAlign="center center" fxShow="true" fxHide="false">
+      <div fxLayout="column wrap" class="intro" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <p style="color: #80deea">Introduction</p>
+        <p style="color:white;margin: 0;">Hello you are speaking to BUDGET INTERNET how can I assist you today?</p>
+        <p style="color:white;margin: 0;">So glad that you chose Dialdirect today. In order for me to give you the best cover for the best premium, I will need some information from you.</p>
+      </div>
+      <div fxLayout="column wrap" class="marginTop1em panelTitleDivs" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <mat-accordion>
+
+          <!-- Panel 1 -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="panelTitle">
+                POLICYHOLDER DETAILS
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <form [formGroup]="policyHolderForm" (ngSubmit)="onNext()" class="formWidth40">
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="firstName" placeholder="First names" id="firstName" type="text">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.firstName.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.firstName.errors.required">firstName is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="surname" placeholder="Surname" id="surname" type="text">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.surname.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.surname.errors.required">surname is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs marginTop1em">
+                <mat-label>Title</mat-label>
+                <mat-select #maritalStatus="" formControlName="title">
+                  <mat-option *ngFor="let title of titles" [value]="title.code">
+                    {{title.description}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.title.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.title.errors.required">title is required</mat-error>
+              </div>
+
+              <!-- Radio Buttons -->
+              <mat-radio-group aria-label="Select an option" #idType="" formControlName="idType">
+                <mat-radio-button (click)="setradio(&apos;idRadio&apos;)" value="1" radioGroup="idType" name="idRadio">ID number or </mat-radio-button>
+                <mat-radio-button (click)="setradio(&apos;pssprtRadio&apos;)" value="2" radioGroup="idType" name="pssprtRadio" class="sidePadding10px">Passport number</mat-radio-button>
+              </mat-radio-group>
+              <div *ngIf="submitted &amp;&amp; policy.idType.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.idType.errors.required">idType is required</mat-error>
+              </div>
+
+              <!-- ID input -->
+              <mat-form-field class="panelTitleDivs marginTop1em">
+                <input matInput="" formControlName="idNumber" (change)="log()" placeholder="ID / Passport Number">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.idNumber.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.idNumber.errors.required">idNumber is required</mat-error>
+                <mat-error *ngIf="policy.idNumber.errors.minLength">idNumber must be atleast 13 digits long</mat-error>
+              </div>
+
+              <!-- Date of birth 1 -->
+              <div *ngIf="isSelected(&apos;idRadio&apos;)">
+                <label>Date of birth</label><br>
+                <mat-form-field class="panelTitleDivs marginTop1em">
+                  <input matInput="" formControlName="dob" [matDatepicker]="picker" [max]="maxDate" placeholder="Year/Month/Date" id="defaultDOB">
+                  <mat-datepicker-toggle matSuffix="" [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker=""></mat-datepicker>
+                </mat-form-field>
+                <div *ngIf="submitted &amp;&amp; policy.dob.errors" class="invalid-feedback">
+                  <mat-error *ngIf="policy.dob.errors.required">dob is required</mat-error>
+                </div>
+              </div>
+
+              <!-- Date of birth 2 -->
+              <div *ngIf="isSelected(&apos;pssprtRadio&apos;)">
+                <label>Date of birth</label><br>
+                <mat-form-field class="panelTitleDivs marginTop1em">
+                  <input matInput="" formControlName="dob" [matDatepicker]="picker" [max]="maxDate" placeholder="Date/Month/Year">
+                  <mat-datepicker-toggle matSuffix="" [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker=""></mat-datepicker>
+                </mat-form-field>
+                <div *ngIf="submitted &amp;&amp; policy.dob.errors" class="invalid-feedback">
+                  <mat-error *ngIf="policy.dob.errors.required">dob is required</mat-error>
+                </div>
+              </div>
+
+              <!-- Gender 1 -->
+              <div *ngIf="isSelected(&apos;idRadio&apos;)">
+                <mat-radio-group aria-label="Gender" #gender="" formControlName="gender">
+                  <label>Gender</label><br>
+                  <mat-radio-button value="M" radioGroup="gender" id="male">Male</mat-radio-button>
+                  <mat-radio-button class="sidePadding10px" value="F" radioGroup="gender" id="female">Female</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted &amp;&amp; policy.gender.errors" class="invalid-feedback">
+                  <mat-error *ngIf="policy.gender.errors.required">gender is required</mat-error>
+                </div>
+              </div>
+
+              <!-- Gender 2 -->
+              <div *ngIf="isSelected(&apos;pssprtRadio&apos;)">
+                <mat-radio-group aria-label="Gender" #gender="" formControlName="gender">
+                  <label>Gender</label><br>
+                  <mat-radio-button value="M" radioGroup="gender">Male</mat-radio-button>
+                  <mat-radio-button class="sidePadding10px" value="F" radioGroup="gender" id="female">Female</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted &amp;&amp; policy.gender.errors" class="invalid-feedback">
+                  <mat-error *ngIf="policy.gender.errors.required">gender is required</mat-error>
+                </div>
+              </div>
+
+              <mat-form-field class="panelTitleDivs marginTop1em">
+                <mat-label>Marital Status</mat-label>
+                <mat-select #maritalStatus="" formControlName="maritalStatus">
+                  <mat-option *ngFor="let maritalStatus of maritalStats" [value]="maritalStatus.code">
+                    {{maritalStatus.description}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.maritalStatus.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.maritalStatus.errors.required">maritalStatus is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs marginTop1em">
+                <mat-label>Employment Status</mat-label>
+                <mat-select formControlName="employmentStatus" #employmentStatus="">
+                  <mat-option *ngFor="let employmentStatus of additional.personOccupationStatus" [value]="employmentStatus.code">
+                    {{employmentStatus.description}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.employmentStatus.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.employmentStatus.errors.required">employmentStatus is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="cellNumber" placeholder="Cellphone number">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.cellNumber.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.cellNumber.errors.required">cellNumber is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="email" placeholder="E-mail address">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; policy.email.errors" class="invalid-feedback">
+                <mat-error *ngIf="policy.email.errors.required">email is required</mat-error>
+                <mat-error *ngIf="policy.email.errors.email">email must be a valid email address</mat-error>
+              </div>
+            </form>
+            <p>Form value: {{ policyHolderForm.value | json }}</p>
+            <p>Form status: {{ policyHolderForm.status | json }}</p>
+          </mat-expansion-panel>
+
+          <!-- Panel 2 -->
+          <!-- <mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title class="panelTitle">
+				MEDICAL AID
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+
+		<form class="formWidth45" [formGroup]="medicalAid" (ngSubmit)="onNext()">
+			<mat-radio-group aria-label="Select an option" class="panelTitleDivs" #haveMedAid formControlName="haveMedAid">
+				<label>Do you have medical aid?</label><br>
+				<div fxLayout="row" fxLayoutAlign="space-between center">
+					<mat-radio-button value="yes" radioGroup="haveMedAid">Yes </mat-radio-button>
+					<mat-radio-button class="sidePadding10px" value="no" radioGroup="haveMedAid">No</mat-radio-button>
+				</div>
+			</mat-radio-group>
+
+			<mat-form-field class="panelTitleDivs marginTop1em">
+				<mat-label>Which company</mat-label>
+				<mat-select formControlName="medAidStatus" #medAidStatus>
+					<mat-option *ngFor="let medAidStatus of medicalAidStatuses" [value]="medAidStatus">
+						{{medAidStatus}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-form-field class="panelTitleDivs marginTop1em">
+				<mat-label>Which Plan</mat-label>
+				<mat-select formControlName="planStatus" #planStatus>
+					<mat-option *ngFor="let planStatus of planStatuses" [value]="planStatus">
+						{{planStatus}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</form>
+	</mat-expansion-panel> -->
+
+          <!-- Panel 3 -->
+          <!-- <mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title class="panelTitle">
+				ITEMS TO BE INSURED
+			</mat-panel-title>
+		</mat-expansion-panel-header>
+
+		<section>
+      <form [formGroup]="motorInsurance" (ngSubmit)="onNext()">
+			<div class="checkItemsRow">
+				<label>Motor Insurance</label> <br>
+				<div class="checkItemsContainer" *ngFor="let motor of motorItems">
+					<mat-checkbox formControlName="motor">{{motor}}</mat-checkbox>
+				</div>
+			</div>
+
+			<div class="checkItemsRow">
+				<label>non-motor Insurance</label> <br>
+				<div class="checkItemsContainer" *ngFor="let item of nonMotor">
+					<mat-checkbox formControlName="nonMotor">{{item}}</mat-checkbox>
+				</div>
+			</div>
+		</section>
+
+	</mat-expansion-panel> -->
+
+          <!-- Panel 4 -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="panelTitle">
+                RISK ADDRESS
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <label>May I have the full address where the insured goods are kept?</label> <br>
+
+            <form class="formWidth40" [formGroup]="riskAddress" (ngSubmit)="onNext()">
+              <mat-form-field class="panelTitleDivs marginTop1em">
+                <mat-label>Area Type</mat-label>
+                <mat-select formControlName="areaTypes" #area="">
+                  <mat-option *ngFor="let area of areaTypes" [value]="area">
+                    {{area}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; risk.areaTypes.errors" class="invalid-feedback">
+                <mat-error *ngIf="risk.areaTypes.errors.required">areaTypes is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="address1" placeholder="Address 1 / Estate etc">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; risk.address1.errors" class="invalid-feedback">
+                <mat-error *ngIf="risk.address1.errors.required">estate is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="address2" placeholder="Address 2 / Unit number etc">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; risk.address2.errors" class="invalid-feedback">
+                <mat-error *ngIf="risk.address2.errors.required">unitNumber is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="address3" placeholder="Address 3 / Street name etc">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; risk.address3.errors" class="invalid-feedback">
+                <mat-error *ngIf="risk.address3.errors.required">streetName is required</mat-error>
+              </div>
+
+              <!-- <mat-form-field class="panelTitleDivs">
+				<input matInput formControlName="suburb" placeholder="Suburb">
+			</mat-form-field> -->
+
+              <mat-form-field class="panelTitleDivs">
+                <input type="text" placeholder="Suburbs" aria-label="Number" matInput="" formControlName="suburb" [matAutocomplete]="auto" (change)="onKey($event)">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let suburb of suburbs.suburbsList" [value]="suburb.suburbName">
+                    {{suburb.suburbName}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; risk.suburb.errors" class="invalid-feedback">
+                <mat-error *ngIf="risk.suburb.errors.required">suburb is required</mat-error>
+              </div>
+
+              <mat-form-field class="panelTitleDivs">
+                <input matInput="" formControlName="postalCode" placeholder="Postal Code">
+              </mat-form-field>
+              <div *ngIf="submitted &amp;&amp; risk.postalCode.errors" class="invalid-feedback">
+                <mat-error *ngIf="risk.postalCode.errors.required">postalCode is required</mat-error>
+              </div>
+            </form>
+
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </div>
+      <div fxLayout="column wrap" class="intro marginTop1em" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <p style="color: #80deea">Compliance</p>
+        <p style="color:white;">For consultants under supervision <br> I am a representative working under supervision of Dialdirect. I comply with the Fit and proper requirements of honesty and intergrity and I am working towards completing the competency requirements. I do want to assure you that I am fully capable of assisting you. We calculate our premiums using the ratings of various factors and I will need to ask you a number of questions to determine your risk profile. Please know that any incorrect information may affect you at claims stage.</p>
+        <p style="color:white;">For consultants under supervision <br> I am an authorised representative of Daildirect. I comply with the Fit and proper requirements relating to honesty and integrity as well as competency. We calculate our premiums using the ratings of various factors and I will need to ask you a number of questions to determine your risk profile. Please know that any incorrect information may affect you at claims stage.</p>
+        <p style="color:white;">Do you consent to your personal information being processed within our group for existing and new product related information?</p>
+        <form [formGroup]="prossessingPermission">
+          <mat-radio-group aria-label="Select an option" style="color:white" #response="" formControlName="response">
+            <mat-radio-button value="yes" radioButton="response">Yes</mat-radio-button>
+            <mat-radio-button class="sidePadding10px" value="no" radioButton="response">No</mat-radio-button>
+          </mat-radio-group>
+        </form>
+      </div>
+      <div fxLayout="column wrap" class="intro marginTop1em" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <p style="color:white;">Should you accept our policy, please be sure you compare our policy schedule to your existing policy schedule to ensure we are comparing like for like and that we are able to provide you with similar or better cover and benefits.</p>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="displayer" fxLayoutAlign="end center" fxShow="true" fxHide="false"><button mat-raised-button="" style="width: 150px;" class="navyBG btn" (click)="onNext()">Next</button></div>
+</div>

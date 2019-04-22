@@ -1,0 +1,135 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+body {
+    background-color: #e3f2fd;
+}
+// Main Container
+.mainContainer {
+    // background-color: #e3f2fd;
+}
+
+// Toolbar
+.toolBar {
+    padding: 0 10px;
+    background-color: #37474f;
+    color: white;
+}
+.logoImg {
+   height: 40px; 
+}
+.boldLogoTxt {
+    font-weight: bold;
+}
+.sidePadding10px {
+    padding: 0 10px;
+}
+
+// Navigation Bar
+.navbarItemsContainer {
+    background-color: #333;
+}
+#myNAV {
+    width: 100%;
+}
+.navBtn {
+    border-radius: 0 !important;
+    color: white;
+    line-height: 30px !important;
+    width: 11%;
+    font-size: xx-small;
+}
+.active, .navBtn:hover {
+  background-color: #e2f1f8;
+  color: purple;
+  font-weight: bold;
+}
+
+// Main Displayer
+.displayer {
+    padding: 1em 2.2em;
+}
+.height100 {
+    height: 100%;
+}
+.mat-expansion-panel-header {
+    padding: 0 10px !important;
+}
+// Main Displayer Left
+.panel1 .mat-expansion-panel-body {
+    padding: 0 8px 16px !important;
+}
+.iconContainer {
+    width: 10%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.textContainer {
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8%;
+}
+.extPanel .mat-expansion-panel {
+    background: none;
+    color: rgba(0,0,0,.87);
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.panelTitle {
+    color: #1a237e;
+    font-weight: bold;
+    font-size: small;
+}
+.panelTitleDivs, .panelTitleDiv {
+    width: 100%;
+}
+.panelTitleDivs .mat-form-field-flex {
+    background: #f5f5f5 !important;
+    padding: 1px 5px;
+}
+.btn {
+    line-height: 32px !important;
+    padding: 0 16px !important;
+    border-radius: 2px !important;
+}
+.navyBG {
+    background-color: #1a237e;
+    color: white;
+}
+.marginTop1em {
+    margin-top: 1em !important;
+}
+.estimate {
+    color: #d500f9;
+    font-weight: bold;
+}
+
+// Main Displayer Right
+.intro {
+    background-color: #546e7a;
+    width: 100%;
+    padding: 0 0 15px 15px;
+}
+.formWidth40 {
+    width: 40%;
+}
+.formWidth45 {
+    width: 45%;
+}
+.checkItemsRow {
+    padding: 10px 0;
+}
+.checkItemsContainer {
+    width: 45%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #eeeeee;
+    padding: 10px;
+    margin: 2px 5px;
+}
+.mat-radio-label-content {
+    font-size: smaller;
+}

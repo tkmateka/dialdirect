@@ -1,0 +1,13 @@
+{
+    "artId": "",
+    "appName": "dialdirect",
+    "description": "First task from Niyas",
+    "lastModified": "2019-04-13T09:10:03.768Z",
+    "artURL": "http://localhost:3000/bhive-art/",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "dataSource": "neutrinos-delivery-rt",
+    "createDate": "2019-04-08T08:24:05.761Z",
+    "studioVersion": "4.1.0",
+    "tenantName": "neutrinos-delivery"
+}
