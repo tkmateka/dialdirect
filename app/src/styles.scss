@@ -6,10 +6,6 @@
 body {
     background-color: #e3f2fd;
 }
-// Main Container
-.mainContainer {
-    // background-color: #e3f2fd;
-}
 
 // Toolbar
 .toolBar {
@@ -41,9 +37,14 @@ body {
     width: 11%;
     font-size: xx-small;
 }
-.active, .navBtn:hover {
-  background-color: #e2f1f8;
-  color: purple;
+.navBtn1 {
+    background-color: #00e676 !important;
+    color: white !important;
+    font-weight: bold;
+}
+.active{
+  background-color: white;
+  color: #00e676;
   font-weight: bold;
 }
 
@@ -114,10 +115,10 @@ body {
     padding: 0 0 15px 15px;
 }
 .formWidth40 {
-    width: 40%;
+    width: 55%;
 }
 .formWidth45 {
-    width: 45%;
+    width: 65%;
 }
 .checkItemsRow {
     padding: 10px 0;

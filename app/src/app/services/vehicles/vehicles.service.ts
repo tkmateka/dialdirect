@@ -5,12 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tokenService } from '../../services/token/token.service';
 
 @Injectable()
-export class suburbService {
-    urlBmodeller = 'http://127.0.0.1:24483/api/';
-
-    suburbsName: string = "";
-    suburbs: any = [];
-    postCode: any = [];
+export class vehiclesService {
+    urlBmodellerYear = 'http://127.0.0.1:24483/api/vehicle';
+    year: any = [];
 
     constructor(private http: HttpClient, private tokenService: tokenService) {
     }
@@ -19,7 +16,7 @@ export class suburbService {
     guid() {
         return this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4();
     }
-    
+
     s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
             .toString(16)
@@ -34,18 +31,17 @@ export class suburbService {
             "Content-Type": "application/json",
             "envIdentity": "DEN0210",
             "envOperator": "BIBOSP",
-            "userName": "BIBOSP",
-            "suburb": this.suburbsName,
+            "userName": "BIBOSP"
         });
     }
 
-    // Get Suburbs
-    getSuburbs(token) {
-        this.http.get(this.urlBmodeller + 'suburb', { headers: this.getHeader(token) }).subscribe(res => {
-            this.suburbs = res;
-            this.suburbs = this.suburbs.suburbsList;
+    // Get Vehicles
+    getYears(token) {
+        this.http.get(this.urlBmodellerYear, { headers: this.getHeader(token) }).subscribe(res => {
+            this.year = res;
+            this.year = this.year.vehicleYearsList;
         }, err => {
-            console.log(err, "suburb request Failed");
+            console.log(err, "Year request Failed");
         });
     }
 }

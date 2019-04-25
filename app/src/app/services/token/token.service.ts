@@ -13,9 +13,8 @@ export class tokenService {
     constructor(private http: HttpClient) {
     }
 
+    // Generate Token
     genToken() {
-        console.log("Token Service called");
-
         let headers = {
             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
             "Accept": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -31,18 +30,13 @@ export class tokenService {
 
             if (this.access_token) {
                 console.log(this.access_token, " got token");
-                // Get Date and Set expiry time
-                // this.date = new Date;
-                // this.expires_in = this.date.getHours() + 1;
                 this.expiryTime = Date.now() + 3600000;
-                this.date = Date.now() + 3600020;
+                this.date = Date.now();
                 console.log(this.expiryTime);
                 console.log(this.date);
 
-
                 // Store
                 localStorage.setItem("expiryTime", this.expiryTime);
-
                 // Reload Page
                 window.location.reload(true);
             }

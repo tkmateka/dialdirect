@@ -14,6 +14,14 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-vehiclemodeldescriptionService
+import { vehiclemodeldescriptionService } from '../services/vehiclemodeldescription/vehiclemodeldescription.service';
+//CORE_REFERENCE_IMPORT-vehiclemodelService
+import { vehiclemodelService } from '../services/vehiclemodel/vehiclemodel.service';
+//CORE_REFERENCE_IMPORT-vehiclemakeService
+import { vehiclemakeService } from '../services/vehiclemake/vehiclemake.service';
+//CORE_REFERENCE_IMPORT-vehiclesService
+import { vehiclesService } from '../services/vehicles/vehicles.service';
 //CORE_REFERENCE_IMPORT-suburbService
 import { suburbService } from '../services/suburb/suburb.service';
 //CORE_REFERENCE_IMPORT-createleadService
@@ -79,6 +87,14 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-vehiclemodeldescriptionService
+vehiclemodeldescriptionService,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-vehiclemodelService
+vehiclemodelService,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-vehiclemakeService
+vehiclemakeService,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-vehiclesService
+vehiclesService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-suburbService
 suburbService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-createleadService

@@ -11,13 +11,13 @@ export class Address {
     public suburbName: string = "";
     public suburbSequence: string = "";
     public province: string = "";
-    public coordinates : Coordinates;
-    constructor(){
-        this.coordinates = new Coordinates();
-    }
+    // public coordinates : Coordinates;
+    // constructor(){
+    //     this.coordinates = new Coordinates();
+    // }
 }
 
-export class Coordinates {
-    public lattitude: string = "";
-    public longitude: string = "";
-}
+// export class Coordinates {
+//     public lattitude: string = "";
+//     public longitude: string = "";
+// }

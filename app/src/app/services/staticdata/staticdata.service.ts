@@ -11,7 +11,10 @@ export class staticdataService {
     title: any = [];
     maritalStatus: any = [];
     additional: any = [];
+    areatype: any = [];
 
+    currTime;
+    expiryTime;
 
     constructor(private http: HttpClient, private tokenService: tokenService) {
     }
@@ -27,17 +30,24 @@ export class staticdataService {
             .substring(1);
     }
 
+    // Headers
+    getHeader(token: any) {
+        return ({
+            "Authorization": 'Bearer ' + token,
+            "CorrelationId": this.guid(),
+            "Content-Type": "application/json",
+            "envIdentity": "DEN0210",
+            "envOperator": "BIBOSP",
+            "userName": "BIBOSP"
+        });
+    }
+
     // Get Static Data Title
     getStaticData(token) {
+        this.expiryTime = Number(localStorage.getItem("expiryTime"));
+        this.currTime = Date.now();
 
-        let d = new Date;
-        let currTime = d.getHours() + ":" + d.getMinutes();
-        let expires_in;
-        let expiryTime;
-
-        console.log(currTime >= expiryTime);
-
-        if (currTime >= expiryTime) {
+        if (this.currTime >= this.expiryTime) {
             this.tokenService.genToken();
             console.log("Your token has expired, please wait while it been refreshed and try again");
         } else {
@@ -59,18 +69,13 @@ export class staticdataService {
             }, err => {
                 console.log(err, "additional request Failed");
             });
+
+            this.http.get(this.urlBmodeller + 'areatype', { headers: this.getHeader(token) }).subscribe(res => {
+                this.areatype = res;
+            }, err => {
+                console.log(err, "areatype request Failed");
+            });
         }
 
-    }
-
-    getHeader(token: any) {
-        return ({
-            "Authorization": 'Bearer ' + token,
-            "CorrelationId": this.guid(),
-            "Content-Type": "application/json",
-            "envIdentity": "DEN0210",
-            "envOperator": "BIBOSP",
-            "userName": "BIBOSP"
-        });
     }
 }

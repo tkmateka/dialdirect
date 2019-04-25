@@ -7,14 +7,41 @@ export class createleadService {
 
     createleadURL = "http://127.0.0.1:24483/api/createlead";
 
+    refNumber: any = '';
+
     constructor(private http: HttpClient) {
     }
 
-    // createlead() {
-    //      return this.http.post(this.createleadURL, ).subscribe((res: any) => {
-    //         console.log(res, "Create Lead Response")
-    //      }, err => {
-    //          console.log(res, "Create Lead Error")
-    //      });
-    // }
+    // Generate Correlation ID
+    guid() {
+        return this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4() + this.s4();
+    }
+    
+    s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+
+    // Headers
+    getHeader(token: any) {
+        return ({
+            "Authorization": 'Bearer ' + token,
+            "CorrelationId": this.guid(),
+            "Content-Type": "application/json",
+            "envIdentity": "DEN0210",
+            "envOperator": "BIBOSP",
+            "userName": "BIBOSP"
+        });
+    }
+
+    createlead(token, lead) {
+         return this.http.post(this.createleadURL, lead, { headers: this.getHeader(token) }).subscribe((res: any) => {
+            this.refNumber = res;
+            this.refNumber = this.refNumber.referenceNumber;
+            console.log(this.refNumber, "Create Lead Response");
+         }, err => {
+             console.log(err, "Create Lead Error");
+         });
+    }
 }

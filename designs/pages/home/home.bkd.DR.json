@@ -795,7 +795,7 @@
                     },
                     {
                         "_key": "html",
-                        "_value": "<div id=\"myNAV\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n\t<button mat-button class=\"navBtn active\">IDENTIFICATION</button>\r\n\t<button mat-button class=\"navBtn\">RISK ITEM</button>\r\n\t<button mat-button class=\"navBtn\" style=\"width:auto !important\">EXTENDED COVER OPTIONS</button>\r\n\t<button mat-button class=\"navBtn\">QUOTE SUMMARY</button>\r\n\t<button mat-button class=\"navBtn\">UNDERWRITING</button>\r\n\t<button mat-button class=\"navBtn\">BANKING</button>\r\n\t<button mat-button class=\"navBtn\">FINALISE</button>\r\n\t<button mat-button class=\"navBtn\">AFTER SALE</button>\r\n</div>",
+                        "_value": "<div id=\"myNAV\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\r\n\t<button mat-button (click)=\"setActiveLink('idEntity')\" class=\"navBtn navBtn1\" [ngClass]=\"{'active':currentLink === 'idEntity'}\">IDENTIFICATION</button>\r\n\t<button mat-button (click)=\"setActiveLink('riSkitem')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'riSkitem'}\">RISK ITEM</button>\r\n\t<button mat-button (click)=\"setActiveLink('exTended')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'exTended'}\" style=\"width:auto !important\">EXTENDED COVER OPTIONS</button>\r\n\t<button mat-button (click)=\"setActiveLink('quOte')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'quOte'}\">QUOTE SUMMARY</button>\r\n\t<button mat-button (click)=\"setActiveLink('unDerwrite')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'unDerwrite'}\">UNDERWRITING</button>\r\n\t<button mat-button (click)=\"setActiveLink('baNking')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'baNking'}\">BANKING</button>\r\n\t<button mat-button (click)=\"setActiveLink('fiNalise')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'fiNalise'}\">FINALISE</button>\r\n\t<button mat-button (click)=\"setActiveLink('afTersale')\" class=\"navBtn\" [ngClass]=\"{'active':currentLink === 'afTersale'}\">AFTER SALE</button>\r\n</div>",
                         "_type": "a",
                         "_attrDef": "p"
                     }
@@ -956,7 +956,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "<mat-accordion class=\"panel1\">\r\n\t<!-- Panel 1 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\t<div class=\"panelTitleDiv\">\r\n\t\t\t\t\t<div class=\"iconContainer\">\r\n\t\t\t\t\t\t<mat-icon>group</mat-icon>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"textContainer\">\r\n\t\t\t\t\t\tCALL DETAILS\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<input matInput placeholder=\"Customer's Name:\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<input matInput placeholder=\"Customer's Quote ID:\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<input matInput placeholder=\"Customer's Current Insurance Company:\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n      <span matPrefix>R &nbsp;</span>\r\n\t\t\t<input matInput placeholder=\"Customer's Current Premium:\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<button mat-raised-button class=\"panelTitleDiv navyBG btn\">Competitor information</button>\r\n\t\t<button mat-raised-button class=\"panelTitleDiv navyBG marginTop1em btn\" style=\"margin-bottom:1em\">Objection</button>\r\n\r\n\t\t<label>Estimated Monthly Premium:</label>\r\n\t\t<p class=\"estimate\">R 0</p>\r\n\t\t\r\n\r\n\t</mat-expansion-panel>\r\n\r\n\t<!-- Panel 2 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\t<div class=\"panelTitleDiv\">\r\n\t\t\t\t\t<div class=\"iconContainer\">\r\n\t\t\t\t\t\t<mat-icon>time_to_leave</mat-icon>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"textContainer\">\r\n\t\t\t\t\t\tVEHICLE\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\t\t<p>I'm visible because I am open</p>\r\n\t</mat-expansion-panel>\r\n\r\n\t<!-- Panel 3 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\t<div class=\"panelTitleDiv\">\r\n\t\t\t\t\t<div class=\"iconContainer\">\r\n\t\t\t\t\t\t<mat-icon>home</mat-icon>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"textContainer\">\r\n\t\t\t\t\t\tHOME & BUILDING\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\t\t<p>I'm visible because I am open</p>\r\n\t</mat-expansion-panel>\r\n\r\n</mat-accordion>",
+                            "_value": "<mat-accordion class=\"panel1\">\r\n\t<!-- Panel 1 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\t<div class=\"panelTitleDiv\">\r\n\t\t\t\t\t<div class=\"iconContainer\">\r\n\t\t\t\t\t\t<mat-icon>group</mat-icon>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"textContainer\">\r\n\t\t\t\t\t\tCALL DETAILS\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<input matInput placeholder=\"Customer's Name:\" value=\"{{fullName}}\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<input matInput placeholder=\"Customer's Quote ID:\" value=\"{{refNumber}}\" readonly>\r\n\t\t</mat-form-field>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<input matInput placeholder=\"Customer's Current Insurance Company:\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<mat-form-field class=\"panelTitleDiv\">\r\n\t\t\t<span matPrefix>R &nbsp;</span>\r\n\t\t\t<input matInput placeholder=\"Customer's Current Premium:\">\r\n\t\t</mat-form-field>\r\n\r\n\t\t<button mat-raised-button class=\"panelTitleDiv navyBG btn\">Competitor information</button>\r\n\t\t<button mat-raised-button class=\"panelTitleDiv navyBG marginTop1em btn\" style=\"margin-bottom:1em\">Objection</button>\r\n\r\n\t\t<label>Estimated Monthly Premium:</label>\r\n\t\t<p class=\"estimate\">R 0</p>\r\n\r\n\r\n\t</mat-expansion-panel>\r\n\r\n\t<!-- Panel 2 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\t<div class=\"panelTitleDiv\">\r\n\t\t\t\t\t<div class=\"iconContainer\">\r\n\t\t\t\t\t\t<mat-icon>time_to_leave</mat-icon>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"textContainer\">\r\n\t\t\t\t\t\tVEHICLE\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\t\t<p>I'm visible because I am open</p>\r\n\t</mat-expansion-panel>\r\n\r\n\t<!-- Panel 3 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\t<div class=\"panelTitleDiv\">\r\n\t\t\t\t\t<div class=\"iconContainer\">\r\n\t\t\t\t\t\t<mat-icon>home</mat-icon>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"textContainer\">\r\n\t\t\t\t\t\tHOME & BUILDING\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\t\t<p>I'm visible because I am open</p>\r\n\t</mat-expansion-panel>\r\n\r\n</mat-accordion>",
                             "_type": "a",
                             "_attrDef": "p"
                         }
@@ -1028,7 +1028,7 @@
                         "_attrDef": "p"
                     }
                 ],
-                "74a3057d-aaec-792e-5ee1-a44fa6cb0b9e": {
+                "f8f3188a-6b08-1bdb-c94c-3da907ca4278": {
                     "paletteKey": "FlexLayoutCol",
                     "designerReference": [
                         {
@@ -1046,7 +1046,7 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "intro",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1091,62 +1091,543 @@
                             "_value": "false",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "currentLink == 'idEntity'",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
-                    "b95c11ba-65f2-b996-e886-ae11bd927d57": {
-                        "paletteKey": "NG-Paragraph",
+                    "74a3057d-aaec-792e-5ee1-a44fa6cb0b9e": {
+                        "paletteKey": "FlexLayoutCol",
                         "designerReference": [
                             {
-                                "_key": "style",
-                                "_value": "color: #80deea",
+                                "_key": "componentLabel",
+                                "_value": "Column",
                                 "_type": "kv",
-                                "_attrDef": "p"
+                                "_attrDef": "p",
+                                "_useAsLabel": true
                             },
                             {
-                                "_key": "class",
+                                "_key": "style",
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "text",
-                                "_value": "Introduction",
+                                "_key": "class",
+                                "_value": "intro",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
                                 "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "start",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "stretch",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
                             }
-                        ]
+                        ],
+                        "b95c11ba-65f2-b996-e886-ae11bd927d57": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color: #80deea",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "Introduction",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        },
+                        "b6f433b3-e0f0-3006-b614-66e5dfa4d92f": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color:white;margin: 0;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "Hello you are speaking to BUDGET INTERNET how can I assist you today?",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        },
+                        "72ad23f5-5010-3c8a-32b7-3a0ff7186b7b": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color:white;margin: 0;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "So glad that you chose Dialdirect today. In order for me to give you the best cover for the best premium, I will need some information from you.",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        }
                     },
-                    "b6f433b3-e0f0-3006-b614-66e5dfa4d92f": {
-                        "paletteKey": "NG-Paragraph",
+                    "96ad3205-ed5b-7fe1-4326-70753eb4c1ab": {
+                        "paletteKey": "FlexLayoutCol",
                         "designerReference": [
                             {
-                                "_key": "style",
-                                "_value": "color:white;margin: 0;",
+                                "_key": "componentLabel",
+                                "_value": "Column",
                                 "_type": "kv",
-                                "_attrDef": "p"
+                                "_attrDef": "p",
+                                "_useAsLabel": true
                             },
                             {
-                                "_key": "class",
+                                "_key": "style",
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "text",
-                                "_value": "Hello you are speaking to BUDGET INTERNET how can I assist you today?",
+                                "_key": "class",
+                                "_value": "marginTop1em panelTitleDivs",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
                                 "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "start",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "stretch",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
                             }
-                        ]
+                        ],
+                        "9e4ccf44-9994-9e8e-5542-7c296944cad1": {
+                            "paletteKey": "HTML",
+                            "designerReference": [
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "HTML",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "html",
+                                    "_value": "<mat-accordion id=\"identificationForm\">\r\n\r\n\t<!-- Panel 1 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tPOLICYHOLDER DETAILS\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<form [formGroup]=\"policyHolderForm\" (ngSubmit)=\"onNext()\" class=\"formWidth40\">\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"firstName\" placeholder=\"First names\" id=\"firstName\" type=\"text\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.firstName.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.firstName.errors.required\">firstName is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"surname\" placeholder=\"Surname\" id=\"surname\" type=\"text\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.surname.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.surname.errors.required\">surname is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Title</mat-label>\r\n\t\t\t\t<mat-select #maritalStatus formControlName=\"title\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let title of titles\" [value]=\"title.code\">\r\n\t\t\t\t\t\t{{title.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.title.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.title.errors.required\">title is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Radio Buttons -->\r\n\t\t\t<mat-radio-group aria-label=\"Select an option\" #idType formControlName=\"idType\">\r\n\t\t\t\t<mat-radio-button (click)=\"setradio('idRadio')\" value=\"1\" radioGroup=\"idType\" name=\"idRadio\">ID number or </mat-radio-button>\r\n\t\t\t\t<mat-radio-button (click)=\"setradio('pssprtRadio')\" value=\"2\" radioGroup=\"idType\" name=\"pssprtRadio\" class=\"sidePadding10px\">Passport number</mat-radio-button>\r\n\t\t\t</mat-radio-group>\r\n\t\t\t<div *ngIf=\"submitted && policy.idType.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.idType.errors.required\">idType is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- ID input -->\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<input matInput formControlName=\"idNumber\" (change)=\"log()\" placeholder=\"ID / Passport Number\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.idNumber.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.idNumber.errors.required\">idNumber is required</mat-error>\r\n\t\t\t\t<mat-error *ngIf=\"policy.idNumber.errors.minLength\">idNumber must be atleast 13 digits long</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Date of birth 1 -->\r\n\t\t\t<div *ngIf=\"isSelected('idRadio')\">\r\n\t\t\t\t<label>Date of birth</label><br>\r\n\t\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t\t<input matInput formControlName=\"dob\" [matDatepicker]=\"picker\" [max]=\"maxDate\" placeholder=\"Year/Month/Date\" id=\"defaultDOB\">\r\n\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n\t\t\t\t\t<mat-datepicker #picker></mat-datepicker>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.dob.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.dob.errors.required\">dob is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Date of birth 2 -->\r\n\t\t\t<div *ngIf=\"isSelected('pssprtRadio')\">\r\n\t\t\t\t<label>Date of birth</label><br>\r\n\t\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t\t<input matInput formControlName=\"dob\" [matDatepicker]=\"picker\" [max]=\"maxDate\" placeholder=\"Date/Month/Year\">\r\n\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n\t\t\t\t\t<mat-datepicker #picker></mat-datepicker>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.dob.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.dob.errors.required\">dob is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Gender 1 -->\r\n\t\t\t<div *ngIf=\"isSelected('idRadio')\">\r\n\t\t\t\t<mat-radio-group aria-label=\"Gender\" #gender formControlName=\"gender\">\r\n\t\t\t\t\t<label>Gender</label><br>\r\n\t\t\t\t\t<mat-radio-button class=\"sidePadding10px\" *ngFor=\"let option of genderOptions\" radioGroup=\"gender\" [checked]=\"option.checked\"\r\n\t\t\t\t\t value=\"{{option.value}}\">{{option.label}}\r\n\t\t\t\t\t</mat-radio-button>\r\n\t\t\t\t</mat-radio-group>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.gender.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.gender.errors.required\">gender is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Gender 2 -->\r\n\t\t\t<div *ngIf=\"isSelected('pssprtRadio')\">\r\n\t\t\t\t<mat-radio-group aria-label=\"Gender\" #gender formControlName=\"gender\">\r\n\t\t\t\t\t<label>Gender</label><br>\r\n\t\t\t\t\t<mat-radio-button value=\"M\" radioGroup=\"gender\" id=\"male\">Male</mat-radio-button>\r\n\t\t\t\t\t<mat-radio-button class=\"sidePadding10px\" value=\"F\" radioGroup=\"gender\" id=\"female\">Female</mat-radio-button>\r\n\t\t\t\t</mat-radio-group>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.gender.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.gender.errors.required\">gender is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Marital Status</mat-label>\r\n\t\t\t\t<mat-select #maritalStatus formControlName=\"maritalStatus\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let maritalStatus of maritalStats\" [value]=\"maritalStatus.code\">\r\n\t\t\t\t\t\t{{maritalStatus.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.maritalStatus.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.maritalStatus.errors.required\">maritalStatus is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Employment Status</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"employmentStatus\" #employmentStatus>\r\n\t\t\t\t\t<mat-option *ngFor=\"let employmentStatus of additional.personOccupationStatus\" [value]=\"employmentStatus.code\">\r\n\t\t\t\t\t\t{{employmentStatus.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.employmentStatus.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.employmentStatus.errors.required\">employmentStatus is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"cellNumber\" placeholder=\"Cellphone number\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.cellNumber.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.cellNumber.errors.required\">cellNumber is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"email\" placeholder=\"E-mail address\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.email.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.email.errors.required\">email is required</mat-error>\r\n\t\t\t\t<mat-error *ngIf=\"policy.email.errors.email\">email must be a valid email address</mat-error>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t\t<p>Form value: {{ policyHolderForm.value | json }}</p>\r\n\t\t<p>Form status: {{ policyHolderForm.status | json }}</p>\r\n\t</mat-expansion-panel>\r\n\r\n\t<!-- Panel 2 -->\r\n\t<!-- <mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tMEDICAL AID\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<form class=\"formWidth45\" [formGroup]=\"medicalAid\" (ngSubmit)=\"onNext()\">\r\n\t\t\t<mat-radio-group aria-label=\"Select an option\" class=\"panelTitleDivs\" #haveMedAid formControlName=\"haveMedAid\">\r\n\t\t\t\t<label>Do you have medical aid?</label><br>\r\n\t\t\t\t<div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n\t\t\t\t\t<mat-radio-button value=\"yes\" radioGroup=\"haveMedAid\">Yes </mat-radio-button>\r\n\t\t\t\t\t<mat-radio-button class=\"sidePadding10px\" value=\"no\" radioGroup=\"haveMedAid\">No</mat-radio-button>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-radio-group>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Which company</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"medAidStatus\" #medAidStatus>\r\n\t\t\t\t\t<mat-option *ngFor=\"let medAidStatus of medicalAidStatuses\" [value]=\"medAidStatus\">\r\n\t\t\t\t\t\t{{medAidStatus}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Which Plan</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"planStatus\" #planStatus>\r\n\t\t\t\t\t<mat-option *ngFor=\"let planStatus of planStatuses\" [value]=\"planStatus\">\r\n\t\t\t\t\t\t{{planStatus}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t</form>\r\n\t</mat-expansion-panel> -->\r\n\r\n\t<!-- Panel 3 -->\r\n\t<!-- <mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tITEMS TO BE INSURED\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<section>\r\n      <form [formGroup]=\"motorInsurance\" (ngSubmit)=\"onNext()\">\r\n\t\t\t<div class=\"checkItemsRow\">\r\n\t\t\t\t<label>Motor Insurance</label> <br>\r\n\t\t\t\t<div class=\"checkItemsContainer\" *ngFor=\"let motor of motorItems\">\r\n\t\t\t\t\t<mat-checkbox formControlName=\"motor\">{{motor}}</mat-checkbox>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"checkItemsRow\">\r\n\t\t\t\t<label>non-motor Insurance</label> <br>\r\n\t\t\t\t<div class=\"checkItemsContainer\" *ngFor=\"let item of nonMotor\">\r\n\t\t\t\t\t<mat-checkbox formControlName=\"nonMotor\">{{item}}</mat-checkbox>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</section>\r\n\r\n\t</mat-expansion-panel> -->\r\n\r\n\t<!-- Panel 4 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tRISK ADDRESS\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<label>May I have the full address where the insured goods are kept?</label> <br>\r\n\r\n\t\t<form class=\"formWidth40\" [formGroup]=\"riskAddress\" (ngSubmit)=\"onNext()\">\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Area Type</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"areaTypes\" #area>\r\n\t\t\t\t\t<mat-option *ngFor=\"let area of areatype.parkingAreas\" [value]=\"area.description\">\r\n\t\t\t\t\t\t{{area.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.areaTypes.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.areaTypes.errors.required\">areaTypes is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"address1\" placeholder=\"Address 1 / Estate etc\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.address1.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.address1.errors.required\">estate is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"address2\" placeholder=\"Address 2 / Unit number etc\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.address2.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.address2.errors.required\">unitNumber is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"address3\" placeholder=\"Address 3 / Street name etc\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.address3.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.address3.errors.required\">streetName is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input type=\"text\" placeholder=\"Suburbs\" aria-label=\"Number\" matInput formControlName=\"suburb\" [matAutocomplete]=\"auto\" (input)=\"onKey($event)\">\r\n\t\t\t\t<mat-autocomplete #auto=\"matAutocomplete\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let suburb of suburbs\" [value]=\"suburb.suburbName\" (click)=\"setPostCode(suburb)\">\r\n\t\t\t\t\t\t{{suburb.suburbName}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-autocomplete>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.suburb.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.suburb.errors.required\">suburb is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"postalCode\" value=\"{{postCode}}\" placeholder=\"Postal Code\" [ngModel]=\"postCode\" [readonly]=\"true\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.postalCode.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.postalCode.errors.required\">postalCode is required</mat-error>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\r\n\t</mat-expansion-panel>\r\n\r\n</mat-accordion>",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        }
                     },
-                    "72ad23f5-5010-3c8a-32b7-3a0ff7186b7b": {
-                        "paletteKey": "NG-Paragraph",
+                    "a6bc809d-0938-a195-43d2-dcfbc46b7c79": {
+                        "paletteKey": "FlexLayoutCol",
                         "designerReference": [
                             {
+                                "_key": "componentLabel",
+                                "_value": "Column",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
                                 "_key": "style",
-                                "_value": "color:white;margin: 0;",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "intro marginTop1em",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "start",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "stretch",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ],
+                        "6b93295a-7308-c7d7-4274-8eb06096e5d6": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color: #80deea",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "Compliance",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        },
+                        "977ee8a0-6c09-6e28-8dea-02be3bfbdb8e": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color:white;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "For consultants under supervision <br> I am  a representative working under supervision of Dialdirect. I comply with the Fit and proper requirements of honesty and intergrity and I am working towards completing the competency requirements. I do want to assure you that I am fully capable of assisting you. We calculate our premiums using the ratings of various factors and I will need to ask you a number of questions to determine your risk profile. Please know that any incorrect information may affect you at claims stage.",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        },
+                        "4fb73707-a051-ea5b-e8d1-59f58f848a31": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color:white;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "For consultants under supervision <br> I am an authorised representative of Daildirect. I comply with the Fit and proper requirements relating to honesty and integrity as well as competency. We calculate our premiums using the ratings of various factors and I will need to ask you a number of questions to determine your risk profile. Please know that any incorrect information may affect you at claims stage.",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        },
+                        "3dc84bc7-6ef3-0c60-8b2a-b05f3e956e51": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color:white;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "Do you consent to your personal information being processed within our group for existing and new product related information?",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        },
+                        "9fb1e4e1-8552-0fd4-bb48-d30c8d5dc05a": {
+                            "paletteKey": "HTML",
+                            "designerReference": [
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "HTML",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "html",
+                                    "_value": "<form [formGroup]=\"prossessingPermission\">\r\n\t<mat-radio-group aria-label=\"Select an option\" style=\"color:white\" #response formControlName=\"response\">\r\n\t\t<mat-radio-button value=\"yes\" radioButton=\"response\">Yes</mat-radio-button>\r\n\t\t<mat-radio-button class=\"sidePadding10px\" value=\"no\" radioButton=\"response\">No</mat-radio-button>\r\n\t</mat-radio-group>\r\n</form>",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        }
+                    },
+                    "3c19187e-e389-389e-84a1-862444401229": {
+                        "paletteKey": "FlexLayoutCol",
+                        "designerReference": [
+                            {
+                                "_key": "componentLabel",
+                                "_value": "Column",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "intro marginTop1em",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "start",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "stretch",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ],
+                        "2ade5e7a-d7d6-6d11-171e-bb3a1615bbbd": {
+                            "paletteKey": "NG-Paragraph",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "color:white;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "text",
+                                    "_value": "Should you accept our policy, please be sure you compare our policy schedule to your existing policy schedule to ensure we are comparing like for like and that we are able to provide you with similar or better cover and benefits.",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                }
+                            ]
+                        }
+                    },
+                    "8318530a-791d-cf55-1635-0e653cd3e6c4": {
+                        "paletteKey": "FlexLayoutRow",
+                        "designerReference": [
+                            {
+                                "_key": "componentLabel",
+                                "_value": "Row",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "style",
+                                "_value": "padding: 1em 0;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1157,16 +1638,87 @@
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "text",
-                                "_value": "So glad that you chose Dialdirect today. In order for me to give you the best cover for the best premium, I will need some information from you.",
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
                                 "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "end",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "center",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
                             }
-                        ]
+                        ],
+                        "865b6ccd-fedc-b9dd-4c68-80c106c18c49": {
+                            "paletteKey": "NG-RaisedButton",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "width: 150px;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "navyBG btn",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "buttonname",
+                                    "_value": "Next",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "color",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(click)",
+                                    "_value": "onNext()",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        }
                     }
                 },
-                "96ad3205-ed5b-7fe1-4326-70753eb4c1ab": {
+                "1da15560-aa5d-5074-d31f-5f6f8a385d3a": {
                     "paletteKey": "FlexLayoutCol",
                     "designerReference": [
                         {
@@ -1229,14 +1781,20 @@
                             "_value": "false",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "currentLink === 'riSkitem'",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
-                    "9e4ccf44-9994-9e8e-5542-7c296944cad1": {
-                        "paletteKey": "HTML",
+                    "a7e961c6-67b2-8ed3-0714-71f700be3e57": {
+                        "paletteKey": "FlexLayoutCol",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
-                                "_value": "HTML",
+                                "_value": "Column",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -1254,188 +1812,92 @@
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "html",
-                                "_value": "<mat-accordion>\r\n\r\n\t<!-- Panel 1 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tPOLICYHOLDER DETAILS\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<form [formGroup]=\"policyHolderForm\" (ngSubmit)=\"onNext()\" class=\"formWidth40\">\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"firstName\" placeholder=\"First names\" id=\"firstName\" type=\"text\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.firstName.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.firstName.errors.required\">firstName is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"surname\" placeholder=\"Surname\" id=\"surname\" type=\"text\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.surname.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.surname.errors.required\">surname is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Title</mat-label>\r\n\t\t\t\t<mat-select #maritalStatus formControlName=\"title\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let title of titles\" [value]=\"title.code\">\r\n\t\t\t\t\t\t{{title.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.title.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.title.errors.required\">title is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Radio Buttons -->\r\n\t\t\t<mat-radio-group aria-label=\"Select an option\" #idType formControlName=\"idType\">\r\n\t\t\t\t<mat-radio-button (click)=\"setradio('idRadio')\" value=\"1\" radioGroup=\"idType\" name=\"idRadio\">ID number or </mat-radio-button>\r\n\t\t\t\t<mat-radio-button (click)=\"setradio('pssprtRadio')\" value=\"2\" radioGroup=\"idType\" name=\"pssprtRadio\" class=\"sidePadding10px\">Passport number</mat-radio-button>\r\n\t\t\t</mat-radio-group>\r\n\t\t\t<div *ngIf=\"submitted && policy.idType.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.idType.errors.required\">idType is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- ID input -->\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<input matInput formControlName=\"idNumber\" (change)=\"log()\" placeholder=\"ID / Passport Number\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.idNumber.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.idNumber.errors.required\">idNumber is required</mat-error>\r\n\t\t\t\t<mat-error *ngIf=\"policy.idNumber.errors.minLength\">idNumber must be atleast 13 digits long</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Date of birth 1 -->\r\n\t\t\t<div *ngIf=\"isSelected('idRadio')\">\r\n\t\t\t\t<label>Date of birth</label><br>\r\n\t\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t\t<input matInput formControlName=\"dob\" [matDatepicker]=\"picker\" [max]=\"maxDate\" placeholder=\"Year/Month/Date\" id=\"defaultDOB\">\r\n\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n\t\t\t\t\t<mat-datepicker #picker></mat-datepicker>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.dob.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.dob.errors.required\">dob is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Date of birth 2 -->\r\n\t\t\t<div *ngIf=\"isSelected('pssprtRadio')\">\r\n\t\t\t\t<label>Date of birth</label><br>\r\n\t\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t\t<input matInput formControlName=\"dob\" [matDatepicker]=\"picker\" [max]=\"maxDate\" placeholder=\"Date/Month/Year\">\r\n\t\t\t\t\t<mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n\t\t\t\t\t<mat-datepicker #picker></mat-datepicker>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.dob.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.dob.errors.required\">dob is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Gender 1 -->\r\n\t\t\t<div *ngIf=\"isSelected('idRadio')\">\r\n\t\t\t\t<mat-radio-group aria-label=\"Gender\" #gender formControlName=\"gender\">\r\n\t\t\t\t\t<label>Gender</label><br>\r\n\t\t\t\t\t<mat-radio-button value=\"M\" radioGroup=\"gender\" id=\"male\">Male</mat-radio-button>\r\n\t\t\t\t\t<mat-radio-button class=\"sidePadding10px\" value=\"F\" radioGroup=\"gender\" id=\"female\">Female</mat-radio-button>\r\n\t\t\t\t</mat-radio-group>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.gender.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.gender.errors.required\">gender is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- Gender 2 -->\r\n\t\t\t<div *ngIf=\"isSelected('pssprtRadio')\">\r\n\t\t\t\t<mat-radio-group aria-label=\"Gender\" #gender formControlName=\"gender\">\r\n\t\t\t\t\t<label>Gender</label><br>\r\n\t\t\t\t\t<mat-radio-button value=\"M\" radioGroup=\"gender\">Male</mat-radio-button>\r\n\t\t\t\t\t<mat-radio-button class=\"sidePadding10px\" value=\"F\" radioGroup=\"gender\" id=\"female\">Female</mat-radio-button>\r\n\t\t\t\t</mat-radio-group>\r\n\t\t\t\t<div *ngIf=\"submitted && policy.gender.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t\t<mat-error *ngIf=\"policy.gender.errors.required\">gender is required</mat-error>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Marital Status</mat-label>\r\n\t\t\t\t<mat-select #maritalStatus formControlName=\"maritalStatus\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let maritalStatus of maritalStats\" [value]=\"maritalStatus.code\">\r\n\t\t\t\t\t\t{{maritalStatus.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.maritalStatus.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.maritalStatus.errors.required\">maritalStatus is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Employment Status</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"employmentStatus\" #employmentStatus>\r\n\t\t\t\t\t<mat-option *ngFor=\"let employmentStatus of additional.personOccupationStatus\" [value]=\"employmentStatus.code\">\r\n\t\t\t\t\t\t{{employmentStatus.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.employmentStatus.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.employmentStatus.errors.required\">employmentStatus is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"cellNumber\" placeholder=\"Cellphone number\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.cellNumber.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.cellNumber.errors.required\">cellNumber is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"email\" placeholder=\"E-mail address\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && policy.email.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"policy.email.errors.required\">email is required</mat-error>\r\n\t\t\t\t<mat-error *ngIf=\"policy.email.errors.email\">email must be a valid email address</mat-error>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t\t<p>Form value: {{ policyHolderForm.value | json }}</p>\r\n\t\t<p>Form status: {{ policyHolderForm.status | json }}</p>\r\n\t</mat-expansion-panel>\r\n\r\n\t<!-- Panel 2 -->\r\n\t<!-- <mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tMEDICAL AID\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<form class=\"formWidth45\" [formGroup]=\"medicalAid\" (ngSubmit)=\"onNext()\">\r\n\t\t\t<mat-radio-group aria-label=\"Select an option\" class=\"panelTitleDivs\" #haveMedAid formControlName=\"haveMedAid\">\r\n\t\t\t\t<label>Do you have medical aid?</label><br>\r\n\t\t\t\t<div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\r\n\t\t\t\t\t<mat-radio-button value=\"yes\" radioGroup=\"haveMedAid\">Yes </mat-radio-button>\r\n\t\t\t\t\t<mat-radio-button class=\"sidePadding10px\" value=\"no\" radioGroup=\"haveMedAid\">No</mat-radio-button>\r\n\t\t\t\t</div>\r\n\t\t\t</mat-radio-group>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Which company</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"medAidStatus\" #medAidStatus>\r\n\t\t\t\t\t<mat-option *ngFor=\"let medAidStatus of medicalAidStatuses\" [value]=\"medAidStatus\">\r\n\t\t\t\t\t\t{{medAidStatus}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Which Plan</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"planStatus\" #planStatus>\r\n\t\t\t\t\t<mat-option *ngFor=\"let planStatus of planStatuses\" [value]=\"planStatus\">\r\n\t\t\t\t\t\t{{planStatus}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t</form>\r\n\t</mat-expansion-panel> -->\r\n\r\n\t<!-- Panel 3 -->\r\n\t<!-- <mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tITEMS TO BE INSURED\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<section>\r\n      <form [formGroup]=\"motorInsurance\" (ngSubmit)=\"onNext()\">\r\n\t\t\t<div class=\"checkItemsRow\">\r\n\t\t\t\t<label>Motor Insurance</label> <br>\r\n\t\t\t\t<div class=\"checkItemsContainer\" *ngFor=\"let motor of motorItems\">\r\n\t\t\t\t\t<mat-checkbox formControlName=\"motor\">{{motor}}</mat-checkbox>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"checkItemsRow\">\r\n\t\t\t\t<label>non-motor Insurance</label> <br>\r\n\t\t\t\t<div class=\"checkItemsContainer\" *ngFor=\"let item of nonMotor\">\r\n\t\t\t\t\t<mat-checkbox formControlName=\"nonMotor\">{{item}}</mat-checkbox>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</section>\r\n\r\n\t</mat-expansion-panel> -->\r\n\r\n\t<!-- Panel 4 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tRISK ADDRESS\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<label>May I have the full address where the insured goods are kept?</label> <br>\r\n\r\n\t\t<form class=\"formWidth40\" [formGroup]=\"riskAddress\" (ngSubmit)=\"onNext()\">\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Area Type</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"areaTypes\" #area>\r\n\t\t\t\t\t<mat-option *ngFor=\"let area of areaTypes\" [value]=\"area\">\r\n\t\t\t\t\t\t{{area}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.areaTypes.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.areaTypes.errors.required\">areaTypes is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"address1\" placeholder=\"Address 1 / Estate etc\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.address1.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.address1.errors.required\">estate is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"address2\" placeholder=\"Address 2 / Unit number etc\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.address2.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.address2.errors.required\">unitNumber is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"address3\" placeholder=\"Address 3 / Street name etc\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.address3.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.address3.errors.required\">streetName is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- <mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"suburb\" placeholder=\"Suburb\">\r\n\t\t\t</mat-form-field> -->\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input type=\"text\" placeholder=\"Suburbs\" aria-label=\"Number\" matInput formControlName=\"suburb\" [matAutocomplete]=\"auto\" (change)=\"onKey($event)\">\r\n\t\t\t\t<mat-autocomplete #auto=\"matAutocomplete\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let suburb of suburbs.suburbsList\" [value]=\"suburb.suburbName\">\r\n\t\t\t\t\t\t{{suburb.suburbName}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-autocomplete>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.suburb.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.suburb.errors.required\">suburb is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<mat-form-field class=\"panelTitleDivs\">\r\n\t\t\t\t<input matInput formControlName=\"postalCode\" placeholder=\"Postal Code\">\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && risk.postalCode.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"risk.postalCode.errors.required\">postalCode is required</mat-error>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\r\n\t</mat-expansion-panel>\r\n\r\n</mat-accordion>",
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
                                 "_type": "a",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "start",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "stretch",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
                             }
-                        ]
-                    }
-                },
-                "a6bc809d-0938-a195-43d2-dcfbc46b7c79": {
-                    "paletteKey": "FlexLayoutCol",
-                    "designerReference": [
-                        {
-                            "_key": "componentLabel",
-                            "_value": "Column",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
-                        },
-                        {
-                            "_key": "style",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "class",
-                            "_value": "intro marginTop1em",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxFlex",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxLayoutGap",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "wrap",
-                            "_value": "wrap",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "layoutAlign",
-                            "_value": "start",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "pLayoutAlign",
-                            "_value": "stretch",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxShow",
-                            "_value": "true",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxHide",
-                            "_value": "false",
-                            "_type": "kv",
-                            "_attrDef": "p"
+                        ],
+                        "7a53707b-7207-3eac-e531-35ca5cfeda95": {
+                            "paletteKey": "HTML",
+                            "designerReference": [
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "HTML",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "html",
+                                    "_value": "<mat-accordion id=\"riskitemsForm\">\r\n\t<!-- Panel 3 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tMOTOR CAR\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<!-- <section>\r\n\t\t\t<form [formGroup]=\"motor\" (ngSubmit)=\"onNext()\">\r\n\t\t\t\t<div class=\"checkItemsRow\">\r\n\t\t\t\t\t<label>Motor Insurance</label> <br>\r\n\t\t\t\t\t<div class=\"checkItemsContainer\" *ngFor=\"let motor of motorItems\">\r\n\t\t\t\t\t\t<mat-checkbox formControlName=\"motor\">{{motor}}</mat-checkbox>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"checkItemsRow\">\r\n\t\t\t\t\t<label>non-motor Insurance</label> <br>\r\n\t\t\t\t\t<div class=\"checkItemsContainer\" *ngFor=\"let item of nonMotor\">\r\n\t\t\t\t\t\t<mat-checkbox formControlName=\"nonMotor\">{{item}}</mat-checkbox>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</form>\r\n\t\t</section> -->\r\n\r\n\t</mat-expansion-panel>\r\n\r\n\r\n\t<!-- Panel 4 -->\r\n\t<mat-expansion-panel>\r\n\t\t<mat-expansion-panel-header>\r\n\t\t\t<mat-panel-title class=\"panelTitle\">\r\n\t\t\t\tRISK ITEM DETAILS\r\n\t\t\t</mat-panel-title>\r\n\t\t</mat-expansion-panel-header>\r\n\r\n\t\t<form class=\"formWidth40\" [formGroup]=\"riskItemDetails\" (ngSubmit)=\"onNextRisk()\">\r\n\t\t\t<label>May I have the vehicle year of registration?</label> <br>\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Vehicle Year</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"vehicleYear\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let year of year\" (click)=\"getMake(year.vCode)\" [value]=\"year.vCode\">\r\n\t\t\t\t\t\t{{year.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && riskitem.vehicleYear.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"riskitem.vehicleYear.errors.required\">areaTypes is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<label>May I have the vehicle make?</label> <br>\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Vehicle Make</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"vehicleMake\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let make of make\" (click)=\"getModel(make.vCode)\" [value]=\"make.vCode\">\r\n\t\t\t\t\t\t{{make.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && riskitem.vehicleMake.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"riskitem.vehicleMake.errors.required\">areaTypes is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<label>May I have the vehicle model?</label> <br>\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Vehicle Model</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"vehicleModel\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let model of model\" (click)=\"getModelDescription(model.vCode)\" [value]=\"model.vCode\">\r\n\t\t\t\t\t\t{{model.description}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && riskitem.vehicleModel.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"riskitem.vehicleModel.errors.required\">areaTypes is required</mat-error>\r\n\t\t\t</div>\r\n\r\n\t\t\t<label>May I have the vehicle description?</label> <br>\r\n\t\t\t<mat-form-field class=\"panelTitleDivs marginTop1em\">\r\n\t\t\t\t<mat-label>Vehicle Description</mat-label>\r\n\t\t\t\t<mat-select formControlName=\"vehicleModelDescription\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let model of modelDescription\" (click)=\"storeVehicle(model)\" [value]=\"model.vehicle.modelDescription\">\r\n\t\t\t\t\t\t{{model.vehicle.modelDescription}}\r\n\t\t\t\t\t</mat-option>\r\n\t\t\t\t</mat-select>\r\n\t\t\t</mat-form-field>\r\n\t\t\t<div *ngIf=\"submitted && riskitem.vehicleModel.errors\" class=\"invalid-feedback\">\r\n\t\t\t\t<mat-error *ngIf=\"riskitem.vehicleModel.errors.required\">areaTypes is required</mat-error>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</mat-expansion-panel>\r\n</mat-accordion>",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                }
+                            ]
                         }
-                    ],
-                    "6b93295a-7308-c7d7-4274-8eb06096e5d6": {
-                        "paletteKey": "NG-Paragraph",
-                        "designerReference": [
-                            {
-                                "_key": "style",
-                                "_value": "color: #80deea",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "text",
-                                "_value": "Compliance",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            }
-                        ]
                     },
-                    "977ee8a0-6c09-6e28-8dea-02be3bfbdb8e": {
-                        "paletteKey": "NG-Paragraph",
-                        "designerReference": [
-                            {
-                                "_key": "style",
-                                "_value": "color:white;",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "text",
-                                "_value": "For consultants under supervision <br> I am  a representative working under supervision of Dialdirect. I comply with the Fit and proper requirements of honesty and intergrity and I am working towards completing the competency requirements. I do want to assure you that I am fully capable of assisting you. We calculate our premiums using the ratings of various factors and I will need to ask you a number of questions to determine your risk profile. Please know that any incorrect information may affect you at claims stage.",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            }
-                        ]
-                    },
-                    "4fb73707-a051-ea5b-e8d1-59f58f848a31": {
-                        "paletteKey": "NG-Paragraph",
-                        "designerReference": [
-                            {
-                                "_key": "style",
-                                "_value": "color:white;",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "text",
-                                "_value": "For consultants under supervision <br> I am an authorised representative of Daildirect. I comply with the Fit and proper requirements relating to honesty and integrity as well as competency. We calculate our premiums using the ratings of various factors and I will need to ask you a number of questions to determine your risk profile. Please know that any incorrect information may affect you at claims stage.",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            }
-                        ]
-                    },
-                    "3dc84bc7-6ef3-0c60-8b2a-b05f3e956e51": {
-                        "paletteKey": "NG-Paragraph",
-                        "designerReference": [
-                            {
-                                "_key": "style",
-                                "_value": "color:white;",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "text",
-                                "_value": "Do you consent to your personal information being processed within our group for existing and new product related information?",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            }
-                        ]
-                    },
-                    "9fb1e4e1-8552-0fd4-bb48-d30c8d5dc05a": {
-                        "paletteKey": "HTML",
+                    "6782a08b-b834-e37e-8947-ea54e0ee7661": {
+                        "paletteKey": "FlexLayoutRow",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
-                                "_value": "HTML",
+                                "_value": "Row",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
                             },
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "padding: 1em 0;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1446,206 +1908,86 @@
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "html",
-                                "_value": "<form [formGroup]=\"prossessingPermission\">\r\n\t<mat-radio-group aria-label=\"Select an option\" style=\"color:white\" #response formControlName=\"response\">\r\n\t\t<mat-radio-button value=\"yes\" radioButton=\"response\">Yes</mat-radio-button>\r\n\t\t<mat-radio-button class=\"sidePadding10px\" value=\"no\" radioButton=\"response\">No</mat-radio-button>\r\n\t</mat-radio-group>\r\n</form>",
+                                "_key": "fxFlex",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxLayoutGap",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "wrap",
+                                "_value": "wrap",
                                 "_type": "a",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "layoutAlign",
+                                "_value": "end",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "pLayoutAlign",
+                                "_value": "center",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxShow",
+                                "_value": "true",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "fxHide",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p"
                             }
-                        ]
-                    }
-                },
-                "3c19187e-e389-389e-84a1-862444401229": {
-                    "paletteKey": "FlexLayoutCol",
-                    "designerReference": [
-                        {
-                            "_key": "componentLabel",
-                            "_value": "Column",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
-                        },
-                        {
-                            "_key": "style",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "class",
-                            "_value": "intro marginTop1em",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxFlex",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxLayoutGap",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "wrap",
-                            "_value": "wrap",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "layoutAlign",
-                            "_value": "start",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "pLayoutAlign",
-                            "_value": "stretch",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxShow",
-                            "_value": "true",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxHide",
-                            "_value": "false",
-                            "_type": "kv",
-                            "_attrDef": "p"
+                        ],
+                        "37346746-9a92-8cdc-27aa-35106f6da86a": {
+                            "paletteKey": "NG-RaisedButton",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "width: 150px;",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "navyBG btn",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "buttonname",
+                                    "_value": "Next",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "color",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(click)",
+                                    "_value": "onNextRisk()",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                }
+                            ]
                         }
-                    ],
-                    "2ade5e7a-d7d6-6d11-171e-bb3a1615bbbd": {
-                        "paletteKey": "NG-Paragraph",
-                        "designerReference": [
-                            {
-                                "_key": "style",
-                                "_value": "color:white;",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "text",
-                                "_value": "Should you accept our policy, please be sure you compare our policy schedule to your existing policy schedule to ensure we are comparing like for like and that we are able to provide you with similar or better cover and benefits.",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            }
-                        ]
                     }
                 }
-            }
-        },
-        "8318530a-791d-cf55-1635-0e653cd3e6c4": {
-            "paletteKey": "FlexLayoutRow",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "displayer",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "end",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "center",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxShow",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxHide",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ],
-            "865b6ccd-fedc-b9dd-4c68-80c106c18c49": {
-                "paletteKey": "NG-RaisedButton",
-                "designerReference": [
-                    {
-                        "_key": "style",
-                        "_value": "width: 150px;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "navyBG btn",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "buttonname",
-                        "_value": "Next",
-                        "_type": "a",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "color",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "(click)",
-                        "_value": "onNext()",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
             }
         }
     }
