@@ -72,6 +72,7 @@ export class staticdataService {
 
             this.http.get(this.urlBmodeller + 'areatype', { headers: this.getHeader(token) }).subscribe(res => {
                 this.areatype = res;
+                console.log(this.areatype)
             }, err => {
                 console.log(err, "areatype request Failed");
             });

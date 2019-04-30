@@ -2,5 +2,10 @@
     "name": "node-red-project",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "private": true
+    "private": true,
+    "dependencies": {
+        "node-red-contrib-http-logger": "~1.0.1",
+        "node-red-contrib-mongodb3": "~2.0.0",
+        "node-red-node-mongodb": "0.0.14"
+    }
 }

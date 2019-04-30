@@ -30,22 +30,24 @@ body {
 #myNAV {
     width: 100%;
 }
-.navBtn {
+.navBtn, .navBtn:disabled, button[disabled] {
     border-radius: 0 !important;
-    color: white;
+    color: white !important;
     line-height: 30px !important;
-    width: 11%;
-    font-size: xx-small;
+    width: 11% !important;
+    font-size: xx-small !important;
 }
 .navBtn1 {
     background-color: #00e676 !important;
     color: white !important;
-    font-weight: bold;
+    font-weight: bolder !important;
+    border: none !important;
+    padding: 0 !important;
 }
-.active{
-  background-color: white;
-  color: #00e676;
-  font-weight: bold;
+.active, .active:disabled {
+  background-color: white !important;
+  color: #00e676 !important;
+  font-weight: bold !important;
 }
 
 // Main Displayer

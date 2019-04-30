@@ -29,9 +29,9 @@ export class LeadDetails {
 
 
 class Agent {
-    public agentName: string = "";
-    public agentId: string = "";
-    public systemId: string = "";
+    public agentName: string = "BIBOSP";
+    public agentId: string = "BIBOSP";
+    public systemId: string = "BIBOSP";
 }
 
 class BrandDetails {

@@ -12,7 +12,7 @@ export class Person {
     public dateOfBirth: string = "";
     public occupationStatus: string = "E";
     public maritalStatus: string = "S";
-    // public maritalStatusDesc: string = "";
+    public maritalStatusDesc: string = "";
     public gender: string = "M";
     public age: number = 24;
     // public relation : string = "",

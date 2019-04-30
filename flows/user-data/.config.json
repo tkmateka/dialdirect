@@ -442,6 +442,60 @@
      "file": "C:\\Program Files\\Neutrinos Studio\\resources\\app.asar.unpacked\\node_modules\\node-red-node-twitter\\27-twitter.js"
     }
    }
+  },
+  "node-red-node-mongodb": {
+   "name": "node-red-node-mongodb",
+   "version": "0.0.14",
+   "local": true,
+   "nodes": {
+    "mongo": {
+     "name": "mongo",
+     "types": [
+      "mongodb",
+      "mongodb out",
+      "mongodb in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-mongodb",
+     "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-node-mongodb\\66-mongodb.js"
+    }
+   }
+  },
+  "node-red-contrib-mongodb3": {
+   "name": "node-red-contrib-mongodb3",
+   "version": "2.0.0",
+   "local": false,
+   "nodes": {
+    "mongodb": {
+     "name": "mongodb",
+     "types": [
+      "mongodb3",
+      "mongodb3 in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-mongodb3",
+     "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-contrib-mongodb3\\mongodb\\mongodb.js"
+    }
+   }
+  },
+  "node-red-contrib-http-logger": {
+   "name": "node-red-contrib-http-logger",
+   "version": "1.0.1",
+   "local": false,
+   "nodes": {
+    "http-logger": {
+     "name": "http-logger",
+     "types": [
+      "http-logger"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-http-logger",
+     "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-contrib-http-logger\\http_logger.js"
+    }
+   }
   }
  },
  "_credentialSecret": "010351c4df61c5f731789e5510347b5e765929f4a88e78b76059c771c2001b07",
@@ -451,7 +505,7 @@
     "view": {
      "view-grid-size": "20",
      "view-node-status": true,
-     "view-show-tips": true,
+     "view-show-tips": false,
      "view-snap-grid": true,
      "view-show-grid": true
     }

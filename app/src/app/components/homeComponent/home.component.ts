@@ -1,5 +1,5 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Inject } from '@angular/core'
 import { ModelMethods } from '../../lib/model.methods';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
@@ -15,11 +15,14 @@ import { vehiclesService } from '../../services/vehicles/vehicles.service';
 import { vehiclemakeService } from '../../services/vehiclemake/vehiclemake.service';
 import { vehiclemodelService } from '../../services/vehiclemodel/vehiclemodel.service';
 import { vehiclemodeldescriptionService } from '../../services/vehiclemodeldescription/vehiclemodeldescription.service';
+import { createvehicleService } from '../../services/createvehicle/createvehicle.service';
 // Models
 import { Person } from "../../models/person";
 import { ContactDetails } from "../../models/contact-details";
 import { Address } from "../../models/address";
 import { LeadDetails } from "../../models/lead";
+import { vehicleDetails } from "../../models/vehicleDetails";
+import { NHTTPLoaderService } from 'neutrinos-seed-services';
 
 @Component({
     selector: 'bh-home',
@@ -31,8 +34,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
     // Default Variables
     step = 0;
+    spinner = false;
     currentLink;
-    gender = "female";
+    gender = "F";
     submitted = false;
     selectDisabled = false;
     displayDateString: any;
@@ -41,10 +45,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
     planStatuses = ["Premium", "Gold", "Platinum"];
     medicalAidStatuses = ["Dialdirect", "Discovery", "Clientele"];
     nonMotor = ["Home Content", "Building", "Portable Possessions"];
-    areaTypes = [
-        "RESIDENTIAL/COMMERCIAL NAMED PREMISES", "	RESIDENTIAL BUILDING GROUP",
-        "NON-RESIDENTIAL BUILDING GROUP", "MIXED BUILDING GROUP", "MILITARY BASE"
-    ];
     motorItems = [
         "Motor car(0)", "Motorcycle(0)", "Caravan(0)",
         "Trailer(0)", "Watchcraft(0)", "Golf Cart(0)"
@@ -57,24 +57,42 @@ export class homeComponent extends NBaseComponent implements OnInit {
     // Objects
     companyObj = {
         "name": "Dialdirect", "code": "08", "brandDetails": {
-            "brandId": "08", "brandName": ""
+            "brandId": "02", "brandName": ""
         },
         "brokerDetails": {
-            "brokerCode": "DIALD", "brokerGroup": "", "vdnNumber": "TEST7"
+            "brokerCode": "BIB", "brokerGroup": "", "vdnNumber": "TEST7"
         },
-        "envIdentity": "DEN08B",
+        "envIdentity": "DEN0210",
         "theme": "dial-theme"
     };
+
+    leadAddress: any = {};
 
     // Strings
     fullName = "";
     refNumber = "";
     access_token;
     postCode = "";
-    suburbSequence = "";
+    suburbSequence: string = "";
     selectedYear = "";
     selectedMake = "";
     selectedModel = "";
+    idEntity: string = "2";
+    riSkitem: string = "2";
+    exTended: string = "2";
+    quOte: string = "2";
+    unDerwrite: string = "2";
+    baNking: string = "2";
+    fiNalise: string = "2";
+    afTersale: string = "2";
+    idEntityStatus: string = "";
+    riSkitemStatus: string = "";
+    exTendedStatus: string = "";
+    quOteStatus: string = "";
+    unDerwriteStatus: string = "";
+    baNkingStatus: string = "";
+    fiNaliseStatus: string = "";
+    afTersaleStatus: string = "";
 
     // Arrays
     titles = [];
@@ -84,15 +102,18 @@ export class homeComponent extends NBaseComponent implements OnInit {
     make: any = [];
     model: any = [];
     vehicle: any = [];
+    vehicleRes: any;
     modelDescription: any = [];
     additional = [];
     maritalStats = [];
 
     // Intervals
     refCodeInterval;
+    vehicleYearInterval;
     genTokenInterval;
     getStaticInterval;
     getVehicleInterval;
+    getVehicleResInterval;
     getVehicleMakeInterval;
     getVehicleModelInterval;
     getVehicleModelDescriptionInterval;
@@ -102,20 +123,28 @@ export class homeComponent extends NBaseComponent implements OnInit {
     contactDetails = new ContactDetails();
     address = new Address();
     lead = new LeadDetails();
+    vehicleDetails = new vehicleDetails();
 
     // Form Groups
     policyHolderForm: FormGroup;
     medicalAid: FormGroup;
     motorInsurance: FormGroup;
     riskAddress: FormGroup;
-    riskItemDetails: FormGroup;
     prossessingPermission: FormGroup;
+
+    riskItemDetails: FormGroup;
+    vehicleYear: FormControl;
+    vehicleMake: FormControl;
+    vehicleModel: FormControl;
+    vehicleModelDescription: FormControl;
+
 
     // =============================================================================
     // Constructor
     // =============================================================================
 
-    constructor(private bdms: NDataModelService,
+    constructor(
+        private bdms: NDataModelService,
         private http: HttpClient,
         private staticdataService: staticdataService,
         private createleadService: createleadService,
@@ -124,7 +153,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
         private vehiclemakeService: vehiclemakeService,
         private vehiclemodelService: vehiclemodelService,
         private vehiclemodeldescriptionService: vehiclemodeldescriptionService,
-        private tokenService: tokenService) {
+        private createvehicleService: createvehicleService,
+        private tokenService: tokenService,
+        private nLoader: NHTTPLoaderService) {
         super();
         this.mm = new ModelMethods(bdms);
 
@@ -177,11 +208,19 @@ export class homeComponent extends NBaseComponent implements OnInit {
         // Risk Address Form
         this.riskAddress = new FormGroup({
             areaTypes: new FormControl('', Validators.required),
-            address1: new FormControl('', Validators.required),
-            address2: new FormControl('', Validators.required),
-            address3: new FormControl('', Validators.required),
-            suburb: new FormControl('', Validators.required),
-            postalCode: new FormControl('', Validators.required)
+            address1: new FormControl(''),
+            address2: new FormControl(''),
+            address3: new FormControl(''),
+            suburb: new FormControl(''),
+            postalCode: new FormControl('')
+        });
+
+        // Risk Items Details
+        this.riskItemDetails = new FormGroup({
+            vehicleYear: new FormControl('', Validators.required),
+            vehicleMake: new FormControl('', Validators.required),
+            vehicleModel: new FormControl('', Validators.required),
+            vehicleModelDescription: new FormControl('', Validators.required)
         });
     }
 
@@ -191,13 +230,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
     ngOnInit() {
 
-        // Risk Items Details
-        this.riskItemDetails = new FormGroup({
-            vehicleYear: new FormControl('', Validators.required),
-            vehicleMake: new FormControl('', Validators.required),
-            vehicleModel: new FormControl('', Validators.required),
-            vehicleModelDescription: new FormControl('', Validators.required)
-        });
+        this.nLoader._isHTTPRequestInProgress$.subscribe(res => {
+            this.spinner = res;
+        })
 
         // Get Expiry Time and Check If there is a Token in the Local Storage
         let curTime = Date.now();
@@ -209,17 +244,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
         } else if (temp_tok) {
             this.access_token = temp_tok;
             this.staticdataService.getStaticData(this.access_token);
-            this.vehiclesService.getYears(this.access_token);
-
-            // Seconds Interval
-            this.getVehicleInterval = setInterval(() => {
-                this.year = this.vehiclesService.year;
-
-                if (this.year.length) {
-                    clearInterval(this.getVehicleInterval);
-                    this.setActiveLink("idEntity");
-                }
-            }, 1000);
         } else {
             this.genToken();
         }
@@ -231,7 +255,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
             this.additional = this.staticdataService.additional;
             this.areatype = this.staticdataService.areatype;
 
-            if (this.titles.length && this.maritalStats.length && this.additional.length) {
+            if (this.titles.length && this.maritalStats.length && this.additional.length && this.areatype.length) {
                 clearInterval(this.getStaticInterval);
             }
         }, 1000);
@@ -242,6 +266,14 @@ export class homeComponent extends NBaseComponent implements OnInit {
     // ===========================================================================================
     // Functions
     // ===========================================================================================
+
+    // convenience getter for easy access to form fields
+    get policy() { return this.policyHolderForm.controls; };
+    get medical() { return this.medicalAid.controls; };
+    get motor() { return this.motorInsurance.controls; };
+    get risk() { return this.riskAddress.controls; };
+    get riskItem() { return this.riskItemDetails.controls; };
+    get prossessing() { return this.prossessingPermission.controls; };
 
     // Set Active Link
     setActiveLink(activeLink) {
@@ -258,18 +290,10 @@ export class homeComponent extends NBaseComponent implements OnInit {
         return this.tokenService.genToken();
     }
 
-    // convenience getter for easy access to form fields
-    get policy() { return this.policyHolderForm.controls; };
-    get medical() { return this.medicalAid.controls; };
-    get motor() { return this.motorInsurance.controls; };
-    get risk() { return this.riskAddress.controls; };
-    get riskItem() { return this.riskItemDetails.controls; };
-    get prossessing() { return this.prossessingPermission.controls; };
-
     // Set Postal Code
     setPostCode(suburb) {
         this.postCode = suburb.postCode;
-        this.suburbSequence = suburb.suburbSequence;
+        this.suburbSequence = suburb.sequenceNumber;
     }
 
     // Disable if data
@@ -343,7 +367,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
         // set gender
         if (personDetails.isMale == true) {
-            this.gender = "male";
+            this.gender = "M";
             this.genderOptions[0].checked = true;
             this.genderOptions[1].checked = false;
         }
@@ -382,28 +406,22 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
         // Assigning the form value to the data model
         // Person
-        this.person.firstName = this.policyHolderForm.value.firstName;
-        this.person.lastName = this.policyHolderForm.value.surname;
+        this.person.firstName = this.policyHolderForm.value.firstName.toUpperCase();
+        this.person.lastName = this.policyHolderForm.value.surname.toUpperCase();
         this.person.titleCode = this.policyHolderForm.value.title;
-        this.person.identification.idType = this.policyHolderForm.value.idType;
+        this.person.identification.idType = Number(this.policyHolderForm.value.idType);
         this.person.identification.idNumber = this.policyHolderForm.value.idNumber;
         this.person.dateOfBirth = this.displayDateString;
         this.person.gender = this.gender;
-        this.person.maritalStatus = this.policyHolderForm.value.maritalStatus;
+        this.person.maritalStatus = this.policyHolderForm.value.maritalStatus.code;
+        this.person.maritalStatusDesc = this.policyHolderForm.value.maritalStatus.description;
         this.person.occupationStatus = this.policyHolderForm.value.employmentStatus;
         this.person.initials = this.getInitials(this.person.firstName);
         this.person.age = this.ageFromDateOfBirth(this.displayDateString);
         // Contact Details
         this.contactDetails.email = this.policyHolderForm.value.email;
         this.contactDetails.phones[0].number = this.policyHolderForm.value.cellNumber;
-        // Address
-        this.address.addressType = this.riskAddress.value.areaTypes;
-        this.address.address1 = this.riskAddress.value.address1;
-        this.address.address2 = this.riskAddress.value.address2;
-        this.address.address3 = this.riskAddress.value.address3;
-        this.address.suburbName = this.riskAddress.value.suburb;
-        this.address.suburbSequence = this.suburbSequence;
-        this.address.postalCode = this.riskAddress.value.postalCode;
+
         // Lead brokerDetails Object
         this.lead.brokerDetails.brokerCode = this.companyObj.brokerDetails.brokerCode;
         this.lead.brokerDetails.brokerGroup = this.companyObj.brokerDetails.brokerGroup;
@@ -415,17 +433,45 @@ export class homeComponent extends NBaseComponent implements OnInit {
         this.lead.person = this.person;
         // Add contactDetail to lead
         this.lead.contactDetail = this.contactDetails;
+
+        // Address
+        // this.vehicleDetails.addresses[0].areaType = this.riskAddress.value.areaTypes.substr(1, 1);
+        // this.vehicleDetails.addresses[0].address1 = this.riskAddress.value.address1;
+        // this.vehicleDetails.addresses[0].address2 = this.riskAddress.value.address2;
+        // this.vehicleDetails.addresses[0].address3 = this.riskAddress.value.address3;
+        // this.vehicleDetails.addresses[0].suburbName = this.riskAddress.value.suburb;
+        // this.vehicleDetails.addresses[0].suburbSequence = this.suburbSequence;
+        // this.vehicleDetails.addresses[0].postalCode = this.riskAddress.value.postalCode;
+
+        // Lead Address
+        this.leadAddress = {
+            "addressType": "R",
+            "isResidentialAdd": "Y",
+            "isPostalAdd": "Y",
+            "accessControlledType": "01",
+            "address1" : this.riskAddress.value.address1,
+            "address2" : this.riskAddress.value.address2,
+            "address3" : this.riskAddress.value.address3,
+            "areaType" : this.riskAddress.value.areaTypes.substr(1, 1),
+            "postalCode" : this.riskAddress.value.postalCode,
+            "suburbName" : this.riskAddress.value.suburb,
+            "suburbSequence" : this.suburbSequence,
+            "province": ""
+        }
+
+        console.log(this.suburbSequence, "SubSequence");
+
         // Add address to lead
-        this.lead.addresses[0] = this.address;
+        this.lead.addresses[0] = this.leadAddress;
 
         this.fullName = this.policyHolderForm.value.firstName + " " + this.policyHolderForm.value.surname;
-
-        // POST  PERSONAL DATA
-        this.createleadService.createlead(this.access_token, this.lead);
 
         // ===========================================================================================
         // CREATE LEAD
         // ===========================================================================================
+
+        // POST  PERSONAL DATA
+        this.createleadService.createlead(this.access_token, this.lead);
 
         // Seconds Interval
         this.refCodeInterval = setInterval(() => {
@@ -435,7 +481,21 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
                 this.policyHolderForm.disable();
                 this.riskAddress.disable();
-                this.setActiveLink('riSkitem');
+                this.vehiclesService.getYears(this.access_token);
+
+                // Seconds Interval
+                this.getVehicleInterval = setInterval(() => {
+                    this.year = this.vehiclesService.year;
+                    if (this.year.length) {
+                        clearInterval(this.getVehicleInterval);
+
+                        this.idEntity = "1";
+                        this.idEntityStatus = "complete";
+
+                        this.setActiveLink('riSkitem');
+                        this.riSkitem = "1";
+                    }
+                }, 1000);
             }
         }, 1000);
     }
@@ -453,14 +513,13 @@ export class homeComponent extends NBaseComponent implements OnInit {
         this.selectedYear = year;
         console.log(this.selectedYear, "year");
         this.vehiclemakeService.getMake(this.access_token, this.selectedYear);
-        // Seconds Interval
+        // Open Loader
         this.getVehicleMakeInterval = setInterval(() => {
             this.make = this.vehiclemakeService.make;
             if (this.make.length) {
                 clearInterval(this.getVehicleMakeInterval);
-                return this.make;
             }
-        }, 500);
+        }, 1000);
     }
 
     // ===========================================================================================
@@ -480,7 +539,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
             this.model = this.vehiclemodelService.model;
             if (this.model.length) {
                 clearInterval(this.getVehicleModelInterval);
-                return this.model;
             }
         }, 1000);
     }
@@ -501,26 +559,43 @@ export class homeComponent extends NBaseComponent implements OnInit {
             this.modelDescription = this.vehiclemodeldescriptionService.modelDescription;
             if (this.modelDescription.length) {
                 clearInterval(this.getVehicleModelDescriptionInterval);
-                return this.modelDescription;
             }
         }, 1000);
     }
 
     // ===========================================================================================
-    // SUBMIT FORM (   onNextRisk     )
+    // Store the Vehicle
     // ===========================================================================================
 
     storeVehicle(vehicle) {
         this.vehicle = vehicle;
         console.log(this.vehicle, "vehicle");
+
+        var todayDate = new Date().toISOString().slice(0, 10);
+
+        this.vehicleDetails.vehicleDetails["year"] = this.vehicle['vehicle']['year'];
+        this.vehicleDetails.vehicleDetails["model"] = this.vehicle['vehicle']['model'];
+        this.vehicleDetails.vehicleDetails["vehicleKey"] = this.vehicle.key;
+        this.vehicleDetails.vehicleDetails["manufacturer"] = this.vehicle['manufacturer']['type'];
+        // this.vehicleDetails.vehicleDetails["engineCapacity"] = this.vehicle['vehicle']['engineCubicCapacity'];
+        this.vehicleDetails.vehicleDetails["vehicleType"] = this.vehicle['vehicle']['type'];
+        this.vehicleDetails.vehicleDetails["vehicleTypeDescription"] = this.vehicle['vehicle']['typeDescription'];
+        this.vehicleDetails.vehicleDetails["make"] = this.vehicle['manufacturer']['description'];
+        this.vehicleDetails.vehicleDetails["vehicleDescription"] = this.vehicle['vehicle']['modelDescription'];
+        this.vehicleDetails["commencementDate"] = todayDate;
+        this.vehicleDetails["effectiveDate"] = todayDate;
+        this.vehicleDetails["inceptionDate"] = todayDate;
+        this.vehicleDetails["referenceNumber"] = this.refNumber;
+
+        console.log(this.vehicleDetails, "Vehicle Details");
+        this.createvehicleService.createVehicle(this.access_token, this.vehicleDetails, this.refNumber);
+        
+        // Seconds Interval
+        this.getVehicleResInterval = setInterval(() => {
+            this.vehicleRes = this.createvehicleService.vehicleRes;
+            if (this.vehicleRes) {
+                clearInterval(this.getVehicleResInterval);
+            }
+        }, 1000);
     }
-
-    // ===========================================================================================
-    // SUBMIT FORM (   onNextRisk     )
-    // ===========================================================================================
-
-    onNextRisk() {
-
-    }
-
 }

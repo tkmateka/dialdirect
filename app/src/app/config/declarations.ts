@@ -14,6 +14,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-createvehicleService
+import { createvehicleService } from '../services/createvehicle/createvehicle.service';
 //CORE_REFERENCE_IMPORT-vehiclemodeldescriptionService
 import { vehiclemodeldescriptionService } from '../services/vehiclemodeldescription/vehiclemodeldescription.service';
 //CORE_REFERENCE_IMPORT-vehiclemodelService
@@ -53,9 +55,11 @@ export const appBootstrap: any = [
 /**
 *Entry Components for @NgModule
 */
+
 export const appEntryComponents: any = [
   //CORE_REFERENCE_PUSH_TO_ENTRY_ARRAY
 ];
+
 
 /**
 *declarations for @NgModule
@@ -87,6 +91,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-createvehicleService
+createvehicleService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-vehiclemodeldescriptionService
 vehiclemodeldescriptionService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-vehiclemodelService

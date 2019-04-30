@@ -38,8 +38,9 @@ export class createleadService {
     createlead(token, lead) {
          return this.http.post(this.createleadURL, lead, { headers: this.getHeader(token) }).subscribe((res: any) => {
             this.refNumber = res;
+            console.log(this.refNumber, "Ref Number");
             this.refNumber = this.refNumber.referenceNumber;
-            console.log(this.refNumber, "Create Lead Response");
+            console.log(lead, "Lead Object");
          }, err => {
              console.log(err, "Create Lead Error");
          });

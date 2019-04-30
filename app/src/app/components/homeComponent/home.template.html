@@ -1,4 +1,7 @@
 <div fxLayout="column wrap" class="mainContainer" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" *ngIf="spinner">
+    <mat-spinner style="position: fixed;z-index: 999;   height: 2em;   width: 2em;   overflow: show;   margin: auto;   top: 0;   left: 0;   bottom: 0;   right: 0;" id="2d474ed4-5064-2e80-1146-ba27d907aef5"></mat-spinner>
+  </div>
   <div fxLayout="row wrap" class="toolBar" fxLayoutAlign="space-between center" fxShow="true" fxHide="false">
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
       <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxShow="true" fxHide="false">
@@ -18,14 +21,14 @@
   </div>
   <div fxLayout="row wrap" class="navbarItemsContainer" fxLayoutAlign="space-around center" fxShow="true" fxHide="false">
     <div id="myNAV" fxLayout="row" fxLayoutAlign="center center">
-      <button mat-button="" (click)="setActiveLink(&apos;idEntity&apos;)" class="navBtn navBtn1" [ngClass]="{&apos;active&apos;:currentLink === &apos;idEntity&apos;}">IDENTIFICATION</button>
-      <button mat-button="" (click)="setActiveLink(&apos;riSkitem&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;riSkitem&apos;}">RISK ITEM</button>
-      <button mat-button="" (click)="setActiveLink(&apos;exTended&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;exTended&apos;}" style="width:auto !important">EXTENDED COVER OPTIONS</button>
-      <button mat-button="" (click)="setActiveLink(&apos;quOte&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;quOte&apos;}">QUOTE SUMMARY</button>
-      <button mat-button="" (click)="setActiveLink(&apos;unDerwrite&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;unDerwrite&apos;}">UNDERWRITING</button>
-      <button mat-button="" (click)="setActiveLink(&apos;baNking&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;baNking&apos;}">BANKING</button>
-      <button mat-button="" (click)="setActiveLink(&apos;fiNalise&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;fiNalise&apos;}">FINALISE</button>
-      <button mat-button="" (click)="setActiveLink(&apos;afTersale&apos;)" class="navBtn" [ngClass]="{&apos;active&apos;:currentLink === &apos;afTersale&apos;}">AFTER SALE</button>
+      <button mat-button="" class="navBtn" [disabled]="idEntity === &apos;2&apos;" (click)="setActiveLink(&apos;idEntity&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;idEntity&apos;, &apos;navBtn1&apos;:idEntityStatus === &apos;complete&apos;}">IDENTIFICATION</button>
+      <button mat-button="" class="navBtn" [disabled]="riSkitem === &apos;2&apos;" (click)="setActiveLink(&apos;riSkitem&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;riSkitem&apos;, &apos;navBtn1&apos;:riSkitemStatus === &apos;complete&apos;}">RISK ITEM</button>
+      <button mat-button="" class="navBtn" [disabled]="exTended === &apos;2&apos;" (click)="setActiveLink(&apos;exTended&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;exTended&apos;, &apos;navBtn1&apos;:exTendedStatus === &apos;complete&apos;}" style="width:auto !important">EXTENDED COVER OPTIONS</button>
+      <button mat-button="" class="navBtn" [disabled]="quOte === &apos;2&apos;" (click)="setActiveLink(&apos;quOte&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;quOte&apos;, &apos;navBtn1&apos;:quOteStatus === &apos;complete&apos;}">QUOTE SUMMARY</button>
+      <button mat-button="" class="navBtn" [disabled]="unDerwrite === &apos;2&apos;" (click)="setActiveLink(&apos;unDerwrite&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;unDerwrite&apos;, &apos;navBtn1&apos;:unDerwriteStatus === &apos;complete&apos;}">UNDERWRITING</button>
+      <button mat-button="" class="navBtn" [disabled]="baNking === &apos;2&apos;" (click)="setActiveLink(&apos;baNking&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;baNking&apos;, &apos;navBtn1&apos;:baNkingStatus === &apos;complete&apos;}">BANKING</button>
+      <button mat-button="" class="navBtn" [disabled]="fiNalise === &apos;2&apos;" (click)="setActiveLink(&apos;fiNalise&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;fiNalise&apos;, &apos;navBtn1&apos;:fiNaliseStatus === &apos;complete&apos;}">FINALISE</button>
+      <button mat-button="" class="navBtn" [disabled]="afTersale === &apos;2&apos;" (click)="setActiveLink(&apos;afTersale&apos;)" [ngClass]="{&apos;active&apos;:currentLink === &apos;afTersale&apos;, &apos;navBtn1&apos;:afTersaleStatus === &apos;complete&apos;}">AFTER SALE</button>
     </div>
   </div>
   <div fxLayout="row wrap" class="displayer" fxLayoutAlign="space-between stretch" fxShow="true" fxHide="false">
@@ -67,7 +70,7 @@
           <button mat-raised-button="" class="panelTitleDiv navyBG marginTop1em btn" style="margin-bottom:1em">Objection</button>
 
           <label>Estimated Monthly Premium:</label>
-          <p class="estimate">R 0</p>
+          <p class="estimate" *ngIf="vehicleRes">R{{vehicleRes.totalPremium}}</p>
 
 
         </mat-expansion-panel>
@@ -224,7 +227,7 @@
                 <mat-form-field class="panelTitleDivs marginTop1em">
                   <mat-label>Marital Status</mat-label>
                   <mat-select #maritalStatus="" formControlName="maritalStatus">
-                    <mat-option *ngFor="let maritalStatus of maritalStats" [value]="maritalStatus.code">
+                    <mat-option *ngFor="let maritalStatus of maritalStats" [value]="maritalStatus">
                       {{maritalStatus.description}}
                     </mat-option>
                   </mat-select>
@@ -260,8 +263,6 @@
                   <mat-error *ngIf="policy.email.errors.email">email must be a valid email address</mat-error>
                 </div>
               </form>
-              <p>Form value: {{ policyHolderForm.value | json }}</p>
-              <p>Form status: {{ policyHolderForm.status | json }}</p>
             </mat-expansion-panel>
 
             <!-- Panel 2 -->
@@ -342,7 +343,8 @@
                 <mat-form-field class="panelTitleDivs marginTop1em">
                   <mat-label>Area Type</mat-label>
                   <mat-select formControlName="areaTypes" #area="">
-                    <mat-option *ngFor="let area of areatype.parkingAreas" [value]="area.description">
+                    <!-- <mat-option *ngFor="let area of areatype.parkingAreas" [value]="area.code"> -->
+                    <mat-option *ngFor="let area of areatype.parkingAreas" [value]="area.code">
                       {{area.description}}
                     </mat-option>
                   </mat-select>
@@ -444,7 +446,6 @@
 
             </mat-expansion-panel>
 
-
             <!-- Panel 4 -->
             <mat-expansion-panel>
               <mat-expansion-panel-header>
@@ -463,9 +464,6 @@
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
-                <div *ngIf="submitted &amp;&amp; riskitem.vehicleYear.errors" class="invalid-feedback">
-                  <mat-error *ngIf="riskitem.vehicleYear.errors.required">areaTypes is required</mat-error>
-                </div>
 
                 <label>May I have the vehicle make?</label> <br>
                 <mat-form-field class="panelTitleDivs marginTop1em">
@@ -476,9 +474,6 @@
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
-                <div *ngIf="submitted &amp;&amp; riskitem.vehicleMake.errors" class="invalid-feedback">
-                  <mat-error *ngIf="riskitem.vehicleMake.errors.required">areaTypes is required</mat-error>
-                </div>
 
                 <label>May I have the vehicle model?</label> <br>
                 <mat-form-field class="panelTitleDivs marginTop1em">
@@ -489,9 +484,6 @@
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
-                <div *ngIf="submitted &amp;&amp; riskitem.vehicleModel.errors" class="invalid-feedback">
-                  <mat-error *ngIf="riskitem.vehicleModel.errors.required">areaTypes is required</mat-error>
-                </div>
 
                 <label>May I have the vehicle description?</label> <br>
                 <mat-form-field class="panelTitleDivs marginTop1em">
@@ -502,14 +494,10 @@
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
-                <div *ngIf="submitted &amp;&amp; riskitem.vehicleModel.errors" class="invalid-feedback">
-                  <mat-error *ngIf="riskitem.vehicleModel.errors.required">areaTypes is required</mat-error>
-                </div>
               </form>
             </mat-expansion-panel>
           </mat-accordion>
         </div>
-        <div fxLayout="row wrap" style="padding: 1em 0;" fxLayoutAlign="end center" fxShow="true" fxHide="false"><button mat-raised-button="" style="width: 150px;" class="navyBG btn" (click)="onNextRisk()">Next</button></div>
       </div>
     </div>
   </div>
