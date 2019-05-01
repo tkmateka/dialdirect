@@ -496,6 +496,23 @@
      "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-contrib-http-logger\\http_logger.js"
     }
    }
+  },
+  "node-red-contrib-mqtt-broker": {
+   "name": "node-red-contrib-mqtt-broker",
+   "version": "0.2.4",
+   "local": false,
+   "nodes": {
+    "mosca-mqtt-broker": {
+     "name": "mosca-mqtt-broker",
+     "types": [
+      "mosca in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-mqtt-broker",
+     "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-contrib-mqtt-broker\\mosca.js"
+    }
+   }
   }
  },
  "_credentialSecret": "010351c4df61c5f731789e5510347b5e765929f4a88e78b76059c771c2001b07",
@@ -505,7 +522,7 @@
     "view": {
      "view-grid-size": "20",
      "view-node-status": true,
-     "view-show-tips": true,
+     "view-show-tips": false,
      "view-snap-grid": true,
      "view-show-grid": true
     }

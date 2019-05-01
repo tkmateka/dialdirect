@@ -465,7 +465,7 @@
   "node-red-contrib-mongodb3": {
    "name": "node-red-contrib-mongodb3",
    "version": "2.0.0",
-   "local": false,
+   "local": true,
    "nodes": {
     "mongodb": {
      "name": "mongodb",
@@ -483,7 +483,7 @@
   "node-red-contrib-http-logger": {
    "name": "node-red-contrib-http-logger",
    "version": "1.0.1",
-   "local": false,
+   "local": true,
    "nodes": {
     "http-logger": {
      "name": "http-logger",
@@ -494,6 +494,23 @@
      "local": true,
      "module": "node-red-contrib-http-logger",
      "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-contrib-http-logger\\http_logger.js"
+    }
+   }
+  },
+  "node-red-contrib-mqtt-broker": {
+   "name": "node-red-contrib-mqtt-broker",
+   "version": "0.2.4",
+   "local": true,
+   "nodes": {
+    "mosca-mqtt-broker": {
+     "name": "mosca-mqtt-broker",
+     "types": [
+      "mosca in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-mqtt-broker",
+     "file": "C:\\Users\\tukis\\OneDrive\\Documents\\neutrinos-projects\\dialdirect\\flows\\user-data\\node_modules\\node-red-contrib-mqtt-broker\\mosca.js"
     }
    }
   }
